@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">DiscoverMovie</string>
+    <string name="button_startQuestionnaire">START</string>
 </resources>
