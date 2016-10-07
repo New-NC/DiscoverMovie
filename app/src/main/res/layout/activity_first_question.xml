@@ -1,79 +1,88 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_first_question"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/space3"
     tools:context="newnc.github.io.discovermovie.FirstQuestion">
 
     <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="4"
         android:text="Which kind of movie do you prefer?"
         android:textColor="#F2F2F5"
         android:textSize="30sp"
         android:gravity="center"
+        android:id="@+id/textView"/>
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
         android:layout_weight="2"
-        android:id="@+id/textView"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="54dp" />
+        android:layout_gravity="center"
+        android:gravity="center">
 
-    <!-- ImageButton scaled, width 200dp and height 100dp by XML -->
-    <!-- ImageButton scale type fit x y by XML -->
-    <ImageButton
-        android:id="@+id/nemo"
-        android:onClick="highlight"
-        android:layout_width="180dp"
-        android:layout_height="280dp"
-        android:src="@drawable/nemo"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:scaleType="fitCenter"
-        android:background="@color/colorPrimaryDark"
-        />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="5">
 
-    <ImageButton
-        android:id="@+id/pets"
-        android:layout_width="180dp"
-        android:layout_height="280dp"
-        android:src="@drawable/pets"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:scaleType="fitCenter"
-        android:background="@color/colorPrimaryDark"
-        />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Best Rated"
+                android:textSize="20sp"
+                android:textColor="#F2F2F5"
+                android:layout_above="@+id/pets"
+                android:gravity="center"
+                android:id="@+id/textNemo" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Newest"
-        android:textSize="20sp"
-        android:textColor="#F2F2F5"
-        android:layout_above="@+id/pets"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="58dp"
-        android:layout_marginEnd="58dp"
-        android:id="@+id/textPets" />
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:text="Newest"
+                android:textSize="20sp"
+                android:textColor="#F2F2F5"
+                android:layout_above="@+id/pets"
+                android:gravity="center"
+                android:id="@+id/textPets" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Best Rated"
-        android:textSize="20sp"
-        android:textColor="#F2F2F5"
-        android:id="@+id/textNemo"
-        android:paddingLeft="4dp"
-        android:layout_above="@id/nemo"
-        android:layout_centerVertical="true"
-        android:layout_marginRight="25dp"
-        android:layout_marginEnd="25dp" />
+        </LinearLayout>
 
 
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
 
+            <ImageButton
+                android:id="@+id/nemo"
+                android:onClick="highlight"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/nemo"
+                android:scaleType="fitXY"
+                android:background="@color/colorPrimaryDark" />
 
-</RelativeLayout>
+            <ImageButton
+                android:id="@+id/pets"
+                android:onClick="highlight"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/pets"
+                android:scaleType="fitXY"
+                android:background="@color/colorPrimaryDark" />
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
