@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">DiscoverMovie</string>
+    <string name="button_startQuestionnaire">INÍCIO</string>
+    <string name="find_a_movie">Descubra um Filme!</string>
+    <string name="which_kind_of_movie_do_you_prefer">Que tipo de filme você prefere?</string>
+    <string name="best_rated">Melhor avaliado</string>
+    <string name="newest">Mais novos</string>
+</resources>

@@ -1,4 +1,8 @@
 <resources>
     <string name="app_name">DiscoverMovie</string>
     <string name="button_startQuestionnaire">START</string>
+    <string name="find_a_movie">Find a Movie!</string>
+    <string name="which_kind_of_movie_do_you_prefer">Which kind of movie do you prefer?</string>
+    <string name="best_rated">Best Rated</string>
+    <string name="newest">Newest</string>
 </resources>
