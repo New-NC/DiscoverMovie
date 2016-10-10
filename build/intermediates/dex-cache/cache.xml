@@ -3,6 +3,7 @@
 
     <item
         is-multidex="true"
+<<<<<<< HEAD
         jar="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
         jumboMode="true"
         optimize="true"
@@ -153,6 +154,14 @@
         revision="24.0.3"
         sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
         <dex dex="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_7473168c2b4c49138f24ccce9b9dbce7ca430bee\classes.dex" />
+=======
+        jar="/home/guilhermejcgois/Projects/new-nc/DiscoverMovie/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
+        jumboMode="true"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b133ba31ece3d1a636694f1932c61c22ff5e1404">
+        <dex dex="/home/guilhermejcgois/Projects/new-nc/DiscoverMovie/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_e296c0f206710a118e04154185a859cea27ca74a/classes.dex" />
+>>>>>>> origin/master
     </item>
 
 </items>

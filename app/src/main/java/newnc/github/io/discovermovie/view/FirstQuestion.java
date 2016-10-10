@@ -1,4 +1,4 @@
-package newnc.github.io.discovermovie;
+package newnc.github.io.discovermovie.view;
 
 import android.graphics.PorterDuff;
 import android.os.Build;
@@ -9,6 +9,8 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+
+import newnc.github.io.discovermovie.R;
 
 import static newnc.github.io.discovermovie.R.drawable.nemo;
 import static newnc.github.io.discovermovie.R.drawable.pets;

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/art_e"
-    tools:context="newnc.github.io.discovermovie.MainActivity">
+    tools:context="newnc.github.io.discovermovie.view.MainActivity">
 
     <TextView
         android:layout_width="fill_parent"

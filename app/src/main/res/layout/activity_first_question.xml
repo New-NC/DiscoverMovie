@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/art_e"
-    tools:context="newnc.github.io.discovermovie.FirstQuestion">
+    tools:context="newnc.github.io.discovermovie.view.FirstQuestion">
 
     <TextView
         android:layout_width="match_parent"
