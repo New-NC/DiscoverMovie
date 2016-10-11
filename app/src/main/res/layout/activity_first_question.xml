@@ -5,16 +5,20 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/space3"
+    android:background="@drawable/art_e"
     tools:context="newnc.github.io.discovermovie.view.FirstQuestion">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="4"
-        android:text="Which kind of movie do you prefer?"
+        android:text="@string/which_kind_of_movie_do_you_prefer"
         android:textColor="#F2F2F5"
         android:textSize="30sp"
+        android:shadowColor="#000000"
+        android:shadowDx="-2"
+        android:shadowDy="-2"
+        android:shadowRadius="15"
         android:gravity="center"
         android:id="@+id/textView"/>
 
@@ -36,9 +40,13 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Best Rated"
+                android:text="@string/best_rated"
                 android:textSize="20sp"
                 android:textColor="#F2F2F5"
+                android:shadowColor="#000000"
+                android:shadowDx="-2"
+                android:shadowDy="-2"
+                android:shadowRadius="15"
                 android:layout_above="@+id/pets"
                 android:gravity="center"
                 android:id="@+id/textNemo" />
@@ -47,9 +55,13 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
-                android:text="Newest"
+                android:text="@string/newest"
                 android:textSize="20sp"
                 android:textColor="#F2F2F5"
+                android:shadowColor="#000000"
+                android:shadowDx="-2"
+                android:shadowDy="-2"
+                android:shadowRadius="15"
                 android:layout_above="@+id/pets"
                 android:gravity="center"
                 android:id="@+id/textPets" />

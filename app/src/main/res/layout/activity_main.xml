@@ -5,16 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@drawable/space2"
+    android:background="@drawable/art_e"
     tools:context="newnc.github.io.discovermovie.view.MainActivity">
 
     <TextView
         android:layout_width="fill_parent"
         android:layout_height="0dp"
         android:layout_weight="15"
-        android:text="Let's Find a Movie!"
-        android:textColor="#F2F2F5"
+        android:text="@string/find_a_movie"
+        android:textColor="#ffffff"
         android:textSize="50sp"
+        android:shadowColor="#000000"
+        android:shadowDx="-2"
+        android:shadowDy="-2"
+        android:shadowRadius="15"
         android:gravity="center"
         android:id="@+id/textView" />
 
@@ -40,8 +44,12 @@
                 android:textColor="#F2F2F5"
                 android:textSize="40sp"
                 android:text="@string/button_startQuestionnaire"
+                android:shadowColor="#000000"
+                android:shadowDx="-2"
+                android:shadowDy="-2"
+                android:shadowRadius="15"
                 android:onClick="startQuestionnaire"
-                android:background="#E51F3C"
+                android:background="#1f36e5"
                 android:layout_marginBottom="80dp"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"/>
