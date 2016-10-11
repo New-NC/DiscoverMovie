@@ -116,3 +116,5 @@ Network Trash Folder
 Temporary Items
 .apdisk
 
+# cache file 
+.build/intermediates/dex-cache/cache.xml
