@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:background="@drawable/space3"
+    tools:context="newnc.github.io.discovermovie.view.Results">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingLeft="@dimen/activity_horizontal_margin">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:text="Results"
+            android:textColor="#F2F2F5"
+            android:textSize="50sp"
+            android:gravity="center"
+            android:id="@+id/textView1"/>
+
+        <ImageButton
+            android:id="@+id/result1"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:src="@drawable/pets"
+            android:scaleType="fitXY"
+            android:background="@color/colorPrimaryDark" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp"/>
+
+        <ImageButton
+            android:id="@+id/result2"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:src="@drawable/nemo"
+            android:scaleType="fitXY"
+            android:background="@color/colorPrimaryDark" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp"/>
+
+        <ImageButton
+            android:id="@+id/result3"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:src="@drawable/pets"
+            android:scaleType="fitXY"
+            android:background="@color/colorPrimaryDark" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp"/>
+
+        <ImageButton
+            android:id="@+id/result4"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:src="@drawable/nemo"
+            android:scaleType="fitXY"
+            android:background="@color/colorPrimaryDark" />
+
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="40dp"/>
+
+        <ImageButton
+            android:id="@+id/result5"
+            android:layout_width="match_parent"
+            android:layout_height="400dp"
+            android:src="@drawable/pets"
+            android:scaleType="fitXY"
+            android:background="@color/colorPrimaryDark" />
+
+        <Button
+            android:id="@+id/returnHome"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:textColor="#F2F2F5"
+            android:textSize="40sp"
+            android:text="@string/returnHome"
+            android:background="#E51F3C"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

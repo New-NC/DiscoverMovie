@@ -5,4 +5,6 @@
     <string name="which_kind_of_movie_do_you_prefer">Which kind of movie do you prefer?</string>
     <string name="best_rated">Best Rated</string>
     <string name="newest">Newest</string>
+    <string name="buttonNextQuestion">NEXT</string>
+    <string name="returnHome">RETURN</string>
 </resources>

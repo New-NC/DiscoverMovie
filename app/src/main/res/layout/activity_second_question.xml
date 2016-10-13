@@ -1,24 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_first_question"
+    android:id="@+id/activity_second_question"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/art_e"
-    tools:context="newnc.github.io.discovermovie.view.FirstQuestion">
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:background="@drawable/space3"
+    tools:context="newnc.github.io.discovermovie.view.SecondQuestion">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="4"
-        android:text="@string/which_kind_of_movie_do_you_prefer"
+        android:layout_weight="13"
+        android:text="Choose a movie to watch!"
         android:textColor="#F2F2F5"
         android:textSize="30sp"
-        android:shadowColor="#000000"
-        android:shadowDx="-2"
-        android:shadowDy="-2"
-        android:shadowRadius="15"
         android:gravity="center"
         android:id="@+id/textView"/>
 
@@ -34,49 +32,10 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="5">
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/best_rated"
-                android:textSize="20sp"
-                android:textColor="#F2F2F5"
-                android:shadowColor="#000000"
-                android:shadowDx="-2"
-                android:shadowDy="-2"
-                android:shadowRadius="15"
-                android:layout_above="@+id/pets"
-                android:gravity="center"
-                android:id="@+id/textNemo" />
-
-            <TextView
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:text="@string/newest"
-                android:textSize="20sp"
-                android:textColor="#F2F2F5"
-                android:shadowColor="#000000"
-                android:shadowDx="-2"
-                android:shadowDy="-2"
-                android:shadowRadius="15"
-                android:layout_above="@+id/pets"
-                android:gravity="center"
-                android:id="@+id/textPets" />
-
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="2">
+            android:layout_weight="10">
 
             <ImageButton
-                android:id="@+id/nemo"
+                android:id="@+id/animal"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="11"
@@ -90,7 +49,49 @@
                 android:layout_weight="1"/>
 
             <ImageButton
-                android:id="@+id/pets"
+                android:id="@+id/tech"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="11"
+                android:src="@drawable/pets"
+                android:scaleType="fitXY"
+                android:background="@color/colorPrimaryDark" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="15">
+
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="10">
+
+            <ImageButton
+                android:id="@+id/princess"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="11"
+                android:src="@drawable/nemo"
+                android:scaleType="fitXY"
+                android:background="@color/colorPrimaryDark" />
+            <Space
+                android:layout_width="10dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"/>
+
+            <ImageButton
+                android:id="@+id/adventure"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="11"
@@ -104,7 +105,7 @@
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="4">
+            android:layout_weight="14">
 
             <Button
                 android:id="@+id/nextQuestion"
@@ -115,8 +116,8 @@
                 android:textSize="40sp"
                 android:text="@string/buttonNextQuestion"
                 android:background="#E51F3C"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
                 android:layout_marginLeft="40dp"
                 android:layout_marginRight="40dp"/>
         </LinearLayout>

@@ -2,166 +2,139 @@
 <items version="2" >
 
     <item
-        is-multidex="true"
-<<<<<<< HEAD
-        jar="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
-        <dex dex="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-fragment-24.2.1_5712652291cc83372bba1facbe7adcd9dd9f6e82\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="24.0.3"
         sha1="e7f3132168957eefc46229fc32c3bd464642b71e">
-        <dex dex="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-ui-24.2.1_5344ceb499a96b821dc2e1931089c5d5b7b6d473\classes.dex" />
+        <dex dex="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-24.2.1_b0c851a378bf79fb40c79a1234facd4d247e8876.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
-        <dex dex="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-compat-24.2.1_367ca4977bae9e6980f0d9e0d6bc2ead21b20e6c\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\incremental-classes\debug\instant-run-bootstrap.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="14e55ddaeb108102d2740ccbbc8fb4dafa4c6c74">
-        <dex dex="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run-bootstrap_5f808019e3d7f85d63bdc93201aafc3536f9fc69\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\exploded-aar\com.android.support\support-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
-        <dex dex="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_2f90fe87cadc4e651e4b2daea2cce223d98ac868\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
-        <dex dex="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-core-utils-24.2.1_2232aa07e37b3809b478b16bea164f00c2951da0\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\exploded-aar\com.android.support\support-core-utils\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
-        <dex dex="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_617724ec70a443f20a4098a9f48f9a9d5e9bd0a1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\exploded-aar\com.android.support\animated-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
-        <dex dex="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-animated-vector-drawable-24.2.1_da632378d97cd1e002ad3ae5875d8f673c0da9b4\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
-        <dex dex="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-media-compat-24.2.1_88eb508013122cec17f55b3fd9516ecff928b3f2\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\exploded-aar\com.android.support\support-media-compat\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
-        <dex dex="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_1550fddc2f376585d32490853f713155ab891b67\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\exploded-aar\com.android.support\support-core-ui\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="867dad63c33388ff8c7644b236579355036d075f">
-        <dex dex="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_a5e427c20ad158638831619164d888bcc7450495\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Filipe\AppData\Local\Android\sdk\extras\android\m2repository\com\android\support\support-annotations\24.2.1\support-annotations-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
-        <dex dex="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\transforms\dex\debug\folders\1000\10\support-annotations-24.2.1_c2a29a6bc2b3fbe1c1bee167c052c192d6492f94\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\exploded-aar\com.android.support\support-v4\24.2.1\jars\classes.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-v4-24.2.1_37a5bcd0d0aefa0a7ff73fd3433daa1a479992a8\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\exploded-aar\com.android.support\support-fragment\24.2.1\jars\libs\internal_impl-24.2.1.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
-        <dex dex="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\transforms\dex\debug\folders\1000\10\internal_impl-24.2.1_06b044189b6978b16596f87a1f6db4b0f7380bd1\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\incremental-runtime-classes\debug\instant-run.jar"
-        jumboMode="true"
-        optimize="true"
-        revision="24.0.3"
-        sha1="07aa6416c7bfff9e52ea26de512cb2a1e7a012d0">
-        <dex dex="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\transforms\dex\debug\folders\1000\10\instant-run_bdc8d15a317f408a9afe6e8787b5be8ac6364a01\classes.dex" />
-    </item>
-    <item
-        is-multidex="true"
-        jar="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\exploded-aar\com.android.support\support-vector-drawable\24.2.1\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="24.0.3"
         sha1="d5c731fc64c03dfe04d51134955b483551c35849">
-        <dex dex="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-support-vector-drawable-24.2.1_18d8e9d63c0c77a75cae5d5dbb2498a4233ab742\classes.dex" />
+        <dex dex="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-24.2.1_e5d863eaaaab8534645ed751a7a245f7919bd133.jar" />
     </item>
     <item
-        is-multidex="true"
-        jar="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\exploded-aar\com.android.support\appcompat-v7\24.2.1\jars\classes.jar"
-        jumboMode="true"
+        is-multidex="false"
+        jar="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="7e4389bd133359a2ff88623ff1e4ff93d6e6f780">
+        <dex dex="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_01cc9ded41a609cec164db43d0622e0724e1ebda.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="935a969265b2a166b2d20415423f5f6e90fe16e0">
+        <dex dex="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_bdf32a5464a9eeb56a80b090d10c16e9bcd02da0.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="5f64d657e838e8375135c0f6057a7ff8fab6a50e">
+        <dex dex="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_e7c7988dbcc992a23e015fdce00e3050bca078e7.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/exploded-aar/com.android.support/support-v4/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-24.2.1_e3b96bef1dd66dab999c663da9bf09fd230313ed.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/exploded-aar/com.android.support/support-fragment/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="b9a1ac78ad7ef3abedc4a4b30cd92bcacb939d1f">
+        <dex dex="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-24.2.1_6555eb14cdbb2d90b6579a1205e9e02c31e9f643.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/24.2.1/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="24.0.3"
         sha1="43b2dba6b5a0b14527961b75329d0b90025f15ea">
-        <dex dex="C:\Users\Filipe\Documents\GitHub\DiscoverMovie\app\build\intermediates\transforms\dex\debug\folders\1000\10\com.android.support-appcompat-v7-24.2.1_7473168c2b4c49138f24ccce9b9dbce7ca430bee\classes.dex" />
-=======
-        jar="/home/guilhermejcgois/Projects/new-nc/DiscoverMovie/app/build/intermediates/incremental-classes/debug/instant-run-bootstrap.jar"
-        jumboMode="true"
+        <dex dex="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-24.2.1_170709797ab63e1a46d648b22a64dac340286f66.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/classes.jar"
+        jumboMode="false"
         optimize="true"
         revision="24.0.3"
-        sha1="b133ba31ece3d1a636694f1932c61c22ff5e1404">
-        <dex dex="/home/guilhermejcgois/Projects/new-nc/DiscoverMovie/app/build/intermediates/transforms/dex/debug/folders/1000/10/instant-run-bootstrap_e296c0f206710a118e04154185a859cea27ca74a/classes.dex" />
->>>>>>> origin/master
+        sha1="09b462bbcb77650284bd6614f1a32f360ef369f8">
+        <dex dex="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-24.2.1_34bb1c111a2d5ed86eca043b1a730b3dcc1ef9af.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="867dad63c33388ff8c7644b236579355036d075f">
+        <dex dex="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_2672ca9bcebf695197b19b6d78eef455ae764567.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="94bc1dfb84dcc8b6f6f8f7cc726d7b2dd39c1574">
+        <dex dex="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-24.2.1_ca7de55e933c95523570f887378ce4712341ccda.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/carolinapascalecampos/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/24.2.1/support-annotations-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="8de3aafecbdf98a61db6427f008f2d515bcd2544">
+        <dex dex="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/pre-dexed/debug/support-annotations-24.2.1_c57e9359a095d994f7b106a95cfdf38ee73508f8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="9c4c3bc902450c39ed54de170db4fb12aea20a35">
+        <dex dex="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-24.2.1_8436ed131800af570ac90b8566b42bbdb4d43fc8.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/exploded-aar/com.android.support/support-compat/24.2.1/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="0ecb4b595fa0f0f8018a149ace3ea6525624f94e">
+        <dex dex="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-24.2.1_02595fcd9a58e977aa494cfedbc0b9444fbb670a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/24.2.1/jars/libs/internal_impl-24.2.1.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="24.0.3"
+        sha1="fbf8da429efd5ad21e02e3e5ecaa1efc4167878d">
+        <dex dex="/Users/carolinapascalecampos/Google Drive/UFSCAR/6 Semestre/DiscoverMovie/app/build/intermediates/pre-dexed/debug/internal_impl-24.2.1_5776cb23fdbf98e20c27fb7f3222646daaefb4a1.jar" />
     </item>
 
 </items>

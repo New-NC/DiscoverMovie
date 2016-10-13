@@ -18,6 +18,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".view.FirstQuestion"></activity>
+        <activity android:name=".view.SecondQuestion"></activity>
+        <activity android:name=".view.Results"></activity>
+
     </application>
 
     <uses-permission android:name="android.permission.INTERNET"/>

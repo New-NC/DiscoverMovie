@@ -1,5 +1,6 @@
 package newnc.github.io.discovermovie.view;
 
+import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
@@ -19,15 +20,15 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
 
     ImageButton imageButtonNemo;
     ImageButton imageButtonPets;
+    Button      buttonNextQuestion;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_question);
-        imageButtonNemo = (ImageButton) findViewById(R.id.nemo);
-        imageButtonNemo.setOnClickListener(this);
-        imageButtonPets = (ImageButton) findViewById(R.id.pets);
-        imageButtonPets.setOnClickListener(this);
+        setClickListener();
     }
+
 
 
     /*if(imageButtonNemo.getColorFilter().equals(0x77000000)){
@@ -35,44 +36,69 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
             }*/
     @Override
     public void onClick(View v) {
-        if(buttonNemo(v)){
+        if (buttonNemo(v)) {
             highlightButton(imageButtonNemo);
             disableHighlightButton(imageButtonPets);
         }
 
-        if(buttonPets(v)){
+        if (buttonPets(v)) {
             highlightButton(imageButtonPets);
             disableHighlightButton(imageButtonNemo);
         }
 
+        if(buttonNextQuestion(v)){
+            Intent myIntent = new Intent(v.getContext(), SecondQuestion.class); /** Class name here */
+            startActivityForResult(myIntent, 0);
+        }
+
     }
 
+
+
+    /* AUXILIARY FUNCTIONS */
+
     //check if the button Nemo was clicked
-    public boolean buttonNemo(View v){
-        if(v.getId() == R.id.nemo){
+    public boolean buttonNemo(View v) {
+        if (v.getId() == R.id.nemo) {
             return true;
-        }
-        else
+        } else
             return false;
     }
 
     //check if the button Pets was clicked
-    public boolean buttonPets(View v){
-        if(v.getId() == R.id.pets){
+    public boolean buttonPets(View v) {
+        if (v.getId() == R.id.pets) {
             return true;
-        }
-        else
+        } else
+            return false;
+    }
+
+    public boolean buttonNextQuestion(View v){
+        if (v.getId() == R.id.nextQuestion){
+            return true;
+        } else
             return false;
     }
 
     //function to highlight a button when clicked
-    public void highlightButton(ImageButton imageButtonClicked){
+    public void highlightButton(ImageButton imageButtonClicked) {
         imageButtonClicked.setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
     }
 
     //function to disable the highlight when another button is clicked
-    public void disableHighlightButton(ImageButton imageButtonNotClicked){
+    public void disableHighlightButton(ImageButton imageButtonNotClicked) {
         imageButtonNotClicked.clearColorFilter();
     }
 
+
+    private void setClickListener() {
+        imageButtonNemo = (ImageButton) findViewById(R.id.nemo);
+        imageButtonNemo.setOnClickListener(this);
+        imageButtonPets = (ImageButton) findViewById(R.id.pets);
+        imageButtonPets.setOnClickListener(this);
+        buttonNextQuestion = (Button) findViewById(R.id.nextQuestion);
+        buttonNextQuestion.setOnClickListener(this);
+    }
 }
+
+
