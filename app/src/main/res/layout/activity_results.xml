@@ -81,13 +81,13 @@
         <Button
             android:id="@+id/returnHome"
             android:layout_width="match_parent"
-            android:layout_height="50dp"
+            android:layout_height="70dp"
             android:textColor="#F2F2F5"
             android:textSize="40sp"
             android:text="@string/returnHome"
             android:background="@color/red"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="10dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
             android:layout_marginLeft="40dp"
             android:layout_marginRight="40dp"/>
 

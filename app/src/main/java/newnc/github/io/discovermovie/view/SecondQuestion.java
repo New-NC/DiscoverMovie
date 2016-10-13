@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -28,7 +29,15 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
     }
 
     @Override
+    public void onBackPressed() {
+        backButtonMainActivity();
+        return;
+    }
+
+
+    @Override
     public void onClick(View v) {
+
         if (buttonAnimal(v)) {
             buttonNextQuestion.setVisibility(View.VISIBLE);
 
@@ -133,4 +142,11 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
         buttonNextQuestion = (Button) findViewById(R.id.nextQuestion);
         buttonNextQuestion.setOnClickListener(this);
     }
+
+    public void backButtonMainActivity() {
+        Intent myIntent = new Intent(SecondQuestion.this, MainActivity.class); /** Class name here */
+        startActivityForResult(myIntent, 0);
+    }
+
+
 }

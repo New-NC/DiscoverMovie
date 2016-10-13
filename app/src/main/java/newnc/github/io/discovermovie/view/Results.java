@@ -20,6 +20,12 @@ public class Results extends AppCompatActivity implements View.OnClickListener {
         setClickListener();
     }
 
+    @Override
+    public void onBackPressed() {
+        backButtonMainActivity();
+        return;
+    }
+
     public void onClick(View v) {
         if(buttonReturnHome(v)){
             Intent myIntent = new Intent(v.getContext(), MainActivity.class); /** Class name here */
@@ -38,6 +44,11 @@ public class Results extends AppCompatActivity implements View.OnClickListener {
     private void setClickListener() {
         buttonReturnHome = (Button) findViewById(R.id.returnHome);
         buttonReturnHome.setOnClickListener(this);
+    }
+
+    public void backButtonMainActivity() {
+        Intent myIntent = new Intent(Results.this, MainActivity.class); /** Class name here */
+        startActivityForResult(myIntent, 0);
     }
 }
 

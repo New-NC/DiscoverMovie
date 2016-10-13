@@ -30,6 +30,12 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
         buttonNextQuestion.setVisibility(View.INVISIBLE);
     }
 
+    @Override
+    public void onBackPressed() {
+        backButtonMainActivity();
+        return;
+    }
+
 
 
     /*if(imageButtonNemo.getColorFilter().equals(0x77000000)){
@@ -103,6 +109,11 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
         imageButtonPets.setOnClickListener(this);
         buttonNextQuestion = (Button) findViewById(R.id.nextQuestion);
         buttonNextQuestion.setOnClickListener(this);
+    }
+
+    public void backButtonMainActivity() {
+        Intent myIntent = new Intent(FirstQuestion.this, MainActivity.class); /** Class name here */
+        startActivityForResult(myIntent, 0);
     }
 }
 
