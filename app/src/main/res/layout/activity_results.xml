@@ -17,7 +17,7 @@
             android:layout_width="match_parent"
             android:layout_height="100dp"
             android:text="Results"
-            android:textColor="#F2F2F5"
+            android:textColor="@color/white"
             android:textSize="50sp"
             android:gravity="center"
             android:id="@+id/textView1"/>
@@ -85,7 +85,7 @@
             android:textColor="#F2F2F5"
             android:textSize="40sp"
             android:text="@string/returnHome"
-            android:background="#E51F3C"
+            android:background="@color/red"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
             android:layout_marginLeft="40dp"

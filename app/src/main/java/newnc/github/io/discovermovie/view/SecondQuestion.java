@@ -23,18 +23,23 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_second_question);
         setClickListener();
+        buttonNextQuestion.setVisibility(View.INVISIBLE);
 
     }
 
     @Override
     public void onClick(View v) {
         if (buttonAnimal(v)) {
+            buttonNextQuestion.setVisibility(View.VISIBLE);
+
             highlightButton(imageButtonAnimal);
             disableHighlightButton(imageButtonTech);
             disableHighlightButton(imageButtonPrincess);
             disableHighlightButton(imageButtonAdventure);
         }
         if (buttonTech(v)) {
+            buttonNextQuestion.setVisibility(View.VISIBLE);
+
             highlightButton(imageButtonTech);
             disableHighlightButton(imageButtonAnimal);
             disableHighlightButton(imageButtonPrincess);
@@ -42,12 +47,16 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
 
         }
         if (buttonPrincess(v)) {
+            buttonNextQuestion.setVisibility(View.VISIBLE);
+
             highlightButton(imageButtonPrincess);
             disableHighlightButton(imageButtonAnimal);
             disableHighlightButton(imageButtonTech);
             disableHighlightButton(imageButtonAdventure);
         }
         if (buttonAdventure(v)) {
+            buttonNextQuestion.setVisibility(View.VISIBLE);
+
             highlightButton(imageButtonAdventure);
             disableHighlightButton(imageButtonAnimal);
             disableHighlightButton(imageButtonPrincess);

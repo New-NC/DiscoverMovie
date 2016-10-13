@@ -27,6 +27,7 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_first_question);
         setClickListener();
+        buttonNextQuestion.setVisibility(View.INVISIBLE);
     }
 
 
@@ -37,11 +38,15 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         if (buttonNemo(v)) {
+            buttonNextQuestion.setVisibility(View.VISIBLE);
+
             highlightButton(imageButtonNemo);
             disableHighlightButton(imageButtonPets);
         }
 
         if (buttonPets(v)) {
+            buttonNextQuestion.setVisibility(View.VISIBLE);
+
             highlightButton(imageButtonPets);
             disableHighlightButton(imageButtonNemo);
         }
