@@ -10,8 +10,10 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import newnc.github.io.discovermovie.R;
+import newnc.github.io.discovermovie.task.DownloadImageTask;
+import newnc.github.io.discovermovie.task.TaskCallback;
 
-public class    SecondQuestion extends AppCompatActivity implements View.OnClickListener {
+public class    SecondQuestion extends AppCompatActivity implements View.OnClickListener, TaskCallback {
 
     ImageButton imageButtonAnimal;
     ImageButton imageButtonTech;
@@ -149,4 +151,11 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
     }
 
 
+    @Override
+    public void doSomething(Object o) {
+        new DownloadImageTask(imageButtonAdventure).execute(((String[]) o)[0]);
+        new DownloadImageTask(imageButtonAnimal).execute(((String[]) o)[1]);
+        new DownloadImageTask(imageButtonPrincess).execute(((String[]) o)[2]);
+        new DownloadImageTask(imageButtonTech).execute(((String[]) o)[3]);
+    }
 }

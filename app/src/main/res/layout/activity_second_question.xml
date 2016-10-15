@@ -40,9 +40,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="11"
-                android:src="@drawable/nemo"
-                android:scaleType="fitXY"
-                android:background="@color/colorPrimaryDark" />
+                android:background="@drawable/nemo"
+                android:scaleType="fitXY" />
 
             <Space
                 android:layout_width="10dp"
@@ -54,9 +53,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="11"
-                android:src="@drawable/pets"
-                android:scaleType="fitXY"
-                android:background="@color/colorPrimaryDark" />
+                android:background="@drawable/pets"
+                android:scaleType="fitXY" />
 
         </LinearLayout>
 
@@ -83,9 +81,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="11"
-                android:src="@drawable/nemo"
-                android:scaleType="fitXY"
-                android:background="@color/colorPrimaryDark" />
+                android:background="@drawable/nemo"
+                android:scaleType="fitXY" />
             <Space
                 android:layout_width="10dp"
                 android:layout_height="match_parent"
@@ -96,9 +93,8 @@
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="11"
-                android:src="@drawable/pets"
-                android:scaleType="fitXY"
-                android:background="@color/colorPrimaryDark" />
+                android:background="@drawable/pets"
+                android:scaleType="fitXY" />
 
         </LinearLayout>
 

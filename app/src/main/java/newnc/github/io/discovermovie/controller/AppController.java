@@ -109,6 +109,72 @@ public class AppController {
     }
 
     /**
+     * Loads categories by pass our API.
+     */
+    public void loadCategories(TaskCallback callback) {
+        log("BEGIN loadCategories");
+
+        callbackObject = callback;
+        new GetCoversTask().execute();
+
+        log("END loadCategories");
+    }
+
+    /**
+     * This method is called in <code>GetCategoriesTask</code> (after <code>loadCategories</code>
+     * call).
+     *
+     * @param callback the json callback from api call.
+     */
+    public void loadCategoriesFrom(JSONArray callback) {
+        log("BEGIN loadCategoriesFrom");
+
+        try {
+            String[] coversPath = new String[2];
+            for (int i = 0; i < 2; i++)
+                coversPath[i] = callback.getString(i);
+            callbackObject.doSomething(coversPath);
+        }catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        log("END loadCategoriesFrom");
+    }
+
+    /**
+     * Loads covers by pass our API.
+     */
+    public void loadResult(TaskCallback callback) {
+        log("BEGIN loadResult");
+
+        callbackObject = callback;
+        new GetCoversTask().execute();
+
+        log("END loadResult");
+    }
+
+    /**
+     * This method is called in <code>GetResultTask</code> (after <code>loadResult</code>
+     * call).
+     *
+     * @param callback the json callback from api call.
+     */
+    public void loadResultFrom(JSONArray callback) {
+        log("BEGIN loadResultFrom");
+
+        try {
+            String[] coversPath = new String[2];
+            for (int i = 0; i < 2; i++)
+                coversPath[i] = callback.getString(i);
+            callbackObject.doSomething(coversPath);
+        }catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        log("END loadResultFrom");
+    }
+
+    /**
      * Unique instance of this class.
      */
     private static AppController _instance;

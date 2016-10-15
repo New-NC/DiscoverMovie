@@ -11,6 +11,7 @@ public class QueryBuilder {
     private String service = "";
     private boolean covers = false;
     private Integer categoryId = null;
+    private Integer result = null;
 
     public QueryBuilder url(String url) {
         this.url = url;
@@ -27,12 +28,22 @@ public class QueryBuilder {
     public QueryBuilder covers() {
         covers = true;
         categoryId = null;
+        result = null;
 
         return this;
     }
 
     public QueryBuilder category(int id) {
         categoryId = new Integer(id);
+        covers = false;
+        result = null;
+
+        return this;
+    }
+
+    public QueryBuilder result(int id) {
+        result = new Integer(id);
+        categoryId = null;
         covers = false;
 
         return this;
@@ -41,6 +52,7 @@ public class QueryBuilder {
     public QueryBuilder clear() {
         categoryId = null;
         covers = false;
+        result = null;
 
         return this;
     }
@@ -57,6 +69,12 @@ public class QueryBuilder {
         if (url == null || url.isEmpty()
                 || service == null)
             return false;
+        if (covers && (categoryId != null || result != null))
+            return false;
+        if (categoryId != null && (covers || result != null))
+            return false;
+        if (result != null && (covers || categoryId != null))
+            return false;
         return true;
     }
 
@@ -68,6 +86,8 @@ public class QueryBuilder {
             stringBuilder.append("/");
         if (service.isEmpty()) return null; else stringBuilder.append(service);
         if (covers) stringBuilder.append("/covers");
+        if (categoryId != null) stringBuilder.append("/categories/" + categoryId.intValue());
+        if (result != null) stringBuilder.append("/result/" + result.intValue());
 
         String query = stringBuilder.substring(0);
 

@@ -26,9 +26,8 @@
             android:id="@+id/result1"
             android:layout_width="match_parent"
             android:layout_height="400dp"
-            android:src="@drawable/pets"
-            android:scaleType="fitXY"
-            android:background="@color/colorPrimaryDark" />
+            android:background="@drawable/pets"
+            android:scaleType="fitXY" />
 
         <Space
             android:layout_width="match_parent"
@@ -38,9 +37,8 @@
             android:id="@+id/result2"
             android:layout_width="match_parent"
             android:layout_height="400dp"
-            android:src="@drawable/nemo"
-            android:scaleType="fitXY"
-            android:background="@color/colorPrimaryDark" />
+            android:background="@drawable/nemo"
+            android:scaleType="fitXY" />
 
         <Space
             android:layout_width="match_parent"
@@ -74,9 +72,8 @@
             android:id="@+id/result5"
             android:layout_width="match_parent"
             android:layout_height="400dp"
-            android:src="@drawable/pets"
-            android:scaleType="fitXY"
-            android:background="@color/colorPrimaryDark" />
+            android:background="@drawable/pets"
+            android:scaleType="fitXY" />
 
         <Button
             android:id="@+id/returnHome"
