@@ -3,6 +3,7 @@ package newnc.github.io.discovermovie.task;
 import android.os.AsyncTask;
 import android.util.Log;
 
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
@@ -26,7 +27,7 @@ import newnc.github.io.discovermovie.util.QueryBuilder;
  *      &callback=JSON_CALLBACK
  *      &format=json
  */
-public class GetMoviesTask extends AsyncTask<Void, Void, String> {
+public class GetCoversTask extends AsyncTask<Void, Void, String> {
 
     /**
      * A <code>QueryBuilder</code> to build the query.
@@ -36,7 +37,7 @@ public class GetMoviesTask extends AsyncTask<Void, Void, String> {
     /**
      * Class constructor.
      */
-    public GetMoviesTask() {
+    public GetCoversTask() {
         setVV();
     }
 
@@ -53,7 +54,7 @@ public class GetMoviesTask extends AsyncTask<Void, Void, String> {
         if (queryBuilder == null) {
             queryBuilder = new QueryBuilder()
                     .url("http://192.168.1.35:8080")
-                    .service("movies");
+                    .service("movies").covers();
         }
 
         // http://stackoverflow.com/questions/10500775/parse-json-from-httpurlconnection-object
@@ -108,7 +109,7 @@ public class GetMoviesTask extends AsyncTask<Void, Void, String> {
 
         try {
             if (s != null)
-                AppController.getInstance().loadMoviesFrom(new JSONObject(s.substring(s.indexOf('{'))));
+                AppController.getInstance().loadCoversFrom(new JSONArray(s));
             else
                 log("null");
         } catch (JSONException e) {

@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import newnc.github.io.discovermovie.model.Movie;
+import newnc.github.io.discovermovie.task.GetCoversTask;
 import newnc.github.io.discovermovie.task.GetMoviesTask;
 import newnc.github.io.discovermovie.task.TaskCallback;
 
@@ -58,7 +59,7 @@ public class AppController {
         if (this.movies == null) this.movies = new ArrayList<>(); else this.movies.clear();
 
         try {
-            JSONArray movies = callback.getJSONArray("products");
+            JSONArray movies = callback.getJSONArray("movies");
             for (int i = 0; i < movies.length(); i++) {
                 JSONObject movie = movies.getJSONObject(i);
 
@@ -72,6 +73,39 @@ public class AppController {
         }
 
         log("END loadMoviesFrom");
+    }
+
+    /**
+     * Loads covers by pass our API.
+     */
+    public void loadCovers(TaskCallback callback) {
+        log("BEGIN loadCovers");
+
+        callbackObject = callback;
+        new GetCoversTask().execute();
+
+        log("END loadCovers");
+    }
+
+    /**
+     * This method is called in <code>GetCoversTask</code> (after <code>loadCovers</code>
+     * call).
+     *
+     * @param callback the json callback from api call.
+     */
+    public void loadCoversFrom(JSONArray callback) {
+        log("BEGIN loadCoversFrom");
+
+        try {
+            String[] coversPath = new String[2];
+            for (int i = 0; i < 2; i++)
+                coversPath[i] = callback.getString(i);
+            callbackObject.doSomething(coversPath);
+        }catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        log("END loadCoversFrom");
     }
 
     /**

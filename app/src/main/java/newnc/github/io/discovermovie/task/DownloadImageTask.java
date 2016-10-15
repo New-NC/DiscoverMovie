@@ -4,6 +4,7 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 
 import java.io.InputStream;
@@ -16,12 +17,14 @@ import java.net.URL;
 public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
     ImageView image;
 
+    private String IMGURL = "https://image.tmdb.org/t/p/w500";
+
     /**
      * Class constructor.
      *
      * @param image the <code>ImageView</code> to load the image.
      */
-    public DownloadImageTask(ImageView image) {
+    public DownloadImageTask(ImageButton image) {
         this.image = image;
     }
 
@@ -36,7 +39,7 @@ public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
     protected Bitmap doInBackground(String... urls) {
         log("BEGIN doInBackground");
 
-        String url = urls[0];
+        String url = IMGURL + urls[0];
         Bitmap bitmap = null;
 
         try {

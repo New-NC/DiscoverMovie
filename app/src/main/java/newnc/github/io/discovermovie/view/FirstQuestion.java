@@ -1,25 +1,23 @@
 package newnc.github.io.discovermovie.view;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
 import android.graphics.PorterDuff;
-import android.os.Build;
-import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
 import newnc.github.io.discovermovie.R;
+import newnc.github.io.discovermovie.controller.AppController;
+import newnc.github.io.discovermovie.task.DownloadImageTask;
+import newnc.github.io.discovermovie.task.TaskCallback;
 
-import static newnc.github.io.discovermovie.R.drawable.nemo;
-import static newnc.github.io.discovermovie.R.drawable.pets;
+public class FirstQuestion extends AppCompatActivity implements View.OnClickListener, TaskCallback {
 
-public class FirstQuestion extends AppCompatActivity implements View.OnClickListener {
-
-    ImageButton imageButtonNemo;
-    ImageButton imageButtonPets;
+    ImageButton imageButtonTopRated;
+    ImageButton imageButtonNewest;
     Button      buttonNextQuestion;
 
     @Override
@@ -28,6 +26,7 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_first_question);
         setClickListener();
         buttonNextQuestion.setVisibility(View.INVISIBLE);
+        AppController.getInstance().loadCovers(this);
     }
 
     @Override
@@ -38,23 +37,23 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
 
 
 
-    /*if(imageButtonNemo.getColorFilter().equals(0x77000000)){
-                imageButtonNemo.clearColorFilter();
+    /*if(imageButtonTopRated.getColorFilter().equals(0x77000000)){
+                imageButtonTopRated.clearColorFilter();
             }*/
     @Override
     public void onClick(View v) {
         if (buttonNemo(v)) {
             buttonNextQuestion.setVisibility(View.VISIBLE);
 
-            highlightButton(imageButtonNemo);
-            disableHighlightButton(imageButtonPets);
+            highlightButton(imageButtonTopRated);
+            disableHighlightButton(imageButtonNewest);
         }
 
         if (buttonPets(v)) {
             buttonNextQuestion.setVisibility(View.VISIBLE);
 
-            highlightButton(imageButtonPets);
-            disableHighlightButton(imageButtonNemo);
+            highlightButton(imageButtonNewest);
+            disableHighlightButton(imageButtonTopRated);
         }
 
         if(buttonNextQuestion(v)){
@@ -103,10 +102,10 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
 
 
     private void setClickListener() {
-        imageButtonNemo = (ImageButton) findViewById(R.id.nemo);
-        imageButtonNemo.setOnClickListener(this);
-        imageButtonPets = (ImageButton) findViewById(R.id.pets);
-        imageButtonPets.setOnClickListener(this);
+        imageButtonTopRated = (ImageButton) findViewById(R.id.nemo);
+        imageButtonTopRated.setOnClickListener(this);
+        imageButtonNewest = (ImageButton) findViewById(R.id.pets);
+        imageButtonNewest.setOnClickListener(this);
         buttonNextQuestion = (Button) findViewById(R.id.nextQuestion);
         buttonNextQuestion.setOnClickListener(this);
     }
@@ -114,6 +113,12 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
     public void backButtonMainActivity() {
         Intent myIntent = new Intent(FirstQuestion.this, MainActivity.class); /** Class name here */
         startActivityForResult(myIntent, 0);
+    }
+
+    @Override
+    public void doSomething(Object o) {
+        new DownloadImageTask(imageButtonNewest).execute(((String[]) o)[0]);
+        new DownloadImageTask(imageButtonTopRated).execute(((String[]) o)[1]);
     }
 }
 
