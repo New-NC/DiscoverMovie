@@ -7,14 +7,14 @@
     android:layout_height="match_parent"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:background="@drawable/space3"
+    android:background="@drawable/background"
     tools:context="newnc.github.io.discovermovie.view.SecondQuestion">
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="10"
-        android:text="Choose a movie to watch!"
+        android:text="@string/choose_movie_to_watch"
         android:textColor="@color/white"
         android:textSize="30sp"
         android:gravity="center"
