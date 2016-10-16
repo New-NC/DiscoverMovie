@@ -19,6 +19,7 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
     ImageButton imageButtonTopRated;
     ImageButton imageButtonNewest;
     Button      buttonNextQuestion;
+    Button buttonReturnHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +33,6 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
     @Override
     public void onBackPressed() {
         backButtonMainActivity();
-        return;
     }
 
 
@@ -43,6 +43,7 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
     @Override
     public void onClick(View v) {
         if (buttonNemo(v)) {
+            buttonReturnHome.setVisibility(View.INVISIBLE);
             buttonNextQuestion.setVisibility(View.VISIBLE);
 
             highlightButton(imageButtonTopRated);
@@ -50,6 +51,7 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
         }
 
         if (buttonPets(v)) {
+            buttonReturnHome.setVisibility(View.INVISIBLE);
             buttonNextQuestion.setVisibility(View.VISIBLE);
 
             highlightButton(imageButtonNewest);
@@ -61,33 +63,31 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
             startActivityForResult(myIntent, 0);
         }
 
-    }
+        if(buttonReturnHome(v)){
+            backButtonMainActivity();
+        }
 
+    }
 
 
     /* AUXILIARY FUNCTIONS */
 
     //check if the button Nemo was clicked
     public boolean buttonNemo(View v) {
-        if (v.getId() == R.id.nemo) {
-            return true;
-        } else
-            return false;
+        return (v.getId() == R.id.bestRated);
     }
 
     //check if the button Pets was clicked
     public boolean buttonPets(View v) {
-        if (v.getId() == R.id.pets) {
-            return true;
-        } else
-            return false;
+        return (v.getId() == R.id.newest);
     }
 
     public boolean buttonNextQuestion(View v){
-        if (v.getId() == R.id.nextQuestion){
-            return true;
-        } else
-            return false;
+        return (v.getId() == R.id.nextQuestion);
+    }
+
+    public boolean buttonReturnHome(View v){
+        return (v.getId() == R.id.returnHome);
     }
 
     //function to highlight a button when clicked
@@ -102,12 +102,14 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
 
 
     private void setClickListener() {
-        imageButtonTopRated = (ImageButton) findViewById(R.id.nemo);
+        imageButtonTopRated = (ImageButton) findViewById(R.id.bestRated);
         imageButtonTopRated.setOnClickListener(this);
-        imageButtonNewest = (ImageButton) findViewById(R.id.pets);
+        imageButtonNewest = (ImageButton) findViewById(R.id.newest);
         imageButtonNewest.setOnClickListener(this);
         buttonNextQuestion = (Button) findViewById(R.id.nextQuestion);
         buttonNextQuestion.setOnClickListener(this);
+        buttonReturnHome = (Button) findViewById(R.id.returnHome);
+        buttonReturnHome.setOnClickListener(this);
     }
 
     public void backButtonMainActivity() {

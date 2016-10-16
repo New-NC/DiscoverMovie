@@ -20,6 +20,7 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
     ImageButton imageButtonPrincess;
     ImageButton imageButtonAdventure;
     Button      buttonNextQuestion;
+    Button buttonReturnHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,6 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
     @Override
     public void onBackPressed() {
         backButtonMainActivity();
-        return;
     }
 
 
@@ -41,6 +41,7 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
     public void onClick(View v) {
 
         if (buttonAnimal(v)) {
+            buttonReturnHome.setVisibility(View.INVISIBLE);
             buttonNextQuestion.setVisibility(View.VISIBLE);
 
             highlightButton(imageButtonAnimal);
@@ -49,6 +50,7 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
             disableHighlightButton(imageButtonAdventure);
         }
         if (buttonTech(v)) {
+            buttonReturnHome.setVisibility(View.INVISIBLE);
             buttonNextQuestion.setVisibility(View.VISIBLE);
 
             highlightButton(imageButtonTech);
@@ -58,6 +60,7 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
 
         }
         if (buttonPrincess(v)) {
+            buttonReturnHome.setVisibility(View.INVISIBLE);
             buttonNextQuestion.setVisibility(View.VISIBLE);
 
             highlightButton(imageButtonPrincess);
@@ -66,6 +69,7 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
             disableHighlightButton(imageButtonAdventure);
         }
         if (buttonAdventure(v)) {
+            buttonReturnHome.setVisibility(View.INVISIBLE);
             buttonNextQuestion.setVisibility(View.VISIBLE);
 
             highlightButton(imageButtonAdventure);
@@ -76,6 +80,10 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
         if(buttonNextQuestion(v)){
             Intent myIntent = new Intent(v.getContext(), Results.class); /** Class name here */
             startActivityForResult(myIntent, 0);
+        }
+
+        if(buttonReturnHome(v)){
+            backButtonMainActivity();
         }
     }
 
@@ -121,6 +129,10 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
             return false;
     }
 
+    public boolean buttonReturnHome(View v){
+        return (v.getId() == R.id.returnHome);
+    }
+
     //function to highlight a button when clicked
     public void highlightButton(ImageButton imageButtonClicked) {
         imageButtonClicked.setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
@@ -143,6 +155,8 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
         imageButtonAdventure.setOnClickListener(this);
         buttonNextQuestion = (Button) findViewById(R.id.nextQuestion);
         buttonNextQuestion.setOnClickListener(this);
+        buttonReturnHome = (Button) findViewById(R.id.returnHome);
+        buttonReturnHome.setOnClickListener(this);
     }
 
     public void backButtonMainActivity() {

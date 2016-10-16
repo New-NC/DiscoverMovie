@@ -16,9 +16,13 @@
         <TextView
             android:layout_width="match_parent"
             android:layout_height="100dp"
-            android:text="Results"
+            android:text="@string/results"
             android:textColor="@color/white"
             android:textSize="50sp"
+            android:shadowColor="@color/black"
+            android:shadowDx="-2"
+            android:shadowDy="-2"
+            android:shadowRadius="15"
             android:gravity="center"
             android:id="@+id/textView1"/>
 

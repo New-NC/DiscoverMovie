@@ -43,7 +43,7 @@
                 android:text="@string/best_rated"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:shadowColor="#000000"
+                android:shadowColor="@color/black"
                 android:shadowDx="-2"
                 android:shadowDy="-2"
                 android:shadowRadius="15"
@@ -58,7 +58,7 @@
                 android:text="@string/newest"
                 android:textSize="20sp"
                 android:textColor="@color/white"
-                android:shadowColor="#000000"
+                android:shadowColor="@color/black"
                 android:shadowDx="-2"
                 android:shadowDy="-2"
                 android:shadowRadius="15"
@@ -76,7 +76,8 @@
             android:layout_weight="2">
 
             <ImageButton
-                android:id="@+id/nemo"
+                android:contentDescription="@string/imageBestRated"
+                android:id="@+id/bestRated"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="11"
@@ -90,7 +91,8 @@
                 android:layout_weight="1"/>
 
             <ImageButton
-                android:id="@+id/pets"
+                android:contentDescription="@string/imageNewest"
+                android:id="@+id/newest"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="11"
@@ -100,17 +102,33 @@
 
         </LinearLayout>
 
-        <LinearLayout
+        <RelativeLayout
             android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="4">
+            android:layout_weight="4"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/returnHome"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:textSize="40sp"
+                android:text="@string/returnHome"
+                android:shadowColor="@color/black"
+                android:background="@color/red"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="20dp"
+                android:layout_marginLeft="40dp"
+                android:layout_marginStart="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginEnd="40dp"/>
 
             <Button
                 android:id="@+id/nextQuestion"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="40sp"
                 android:text="@string/buttonNextQuestion"
@@ -118,8 +136,12 @@
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="20dp"
                 android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"/>
-        </LinearLayout>
+                android:layout_marginStart="40dp"
+                android:layout_marginRight="40dp"
+                android:layout_marginEnd="40dp"/>
+
+
+        </RelativeLayout>
 
     </LinearLayout>
 </LinearLayout>
