@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity implements TaskCallback {
         AppController.getInstance().loadMovies(this);
     }
 
-
     public void startQuestionnaire(View view) {
         Intent myIntent = new Intent(view.getContext(), FirstQuestion.class); /** Class name here */
         startActivityForResult(myIntent, 0);
