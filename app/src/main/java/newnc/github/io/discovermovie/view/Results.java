@@ -9,6 +9,7 @@ import android.widget.Button;
 import android.widget.ImageButton;
 
 import newnc.github.io.discovermovie.R;
+import newnc.github.io.discovermovie.controller.AppController;
 import newnc.github.io.discovermovie.task.DownloadImageTask;
 import newnc.github.io.discovermovie.task.TaskCallback;
 
@@ -32,6 +33,8 @@ public class Results extends AppCompatActivity implements View.OnClickListener, 
         imageButton3 = (ImageButton) findViewById(R.id.result3);
         imageButton4 = (ImageButton) findViewById(R.id.result4);
         imageButton5 = (ImageButton) findViewById(R.id.result5);
+
+        AppController.getInstance().loadResult(this);
     }
 
     @Override

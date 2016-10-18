@@ -56,8 +56,8 @@ public class GetResultTask extends AsyncTask<Integer, Void, String> {
 
         if (queryBuilder == null) {
             queryBuilder = new QueryBuilder()
-                    .url("http://192.168.1.35:8080")
-                    .service("movies").result(params[0]);
+                    .url("http://192.168.2.190:8080")
+                    .service("movies").result(params[0], params[1]);
         }
 
         // http://stackoverflow.com/questions/10500775/parse-json-from-httpurlconnection-object

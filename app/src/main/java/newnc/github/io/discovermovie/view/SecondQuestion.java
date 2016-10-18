@@ -4,12 +4,14 @@ import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 
 import newnc.github.io.discovermovie.R;
+import newnc.github.io.discovermovie.controller.AppController;
 import newnc.github.io.discovermovie.task.DownloadImageTask;
 import newnc.github.io.discovermovie.task.TaskCallback;
 
@@ -28,7 +30,7 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
         setContentView(R.layout.activity_second_question);
         setClickListener();
         buttonNextQuestion.setVisibility(View.INVISIBLE);
-
+        AppController.getInstance().loadCategories(this);
     }
 
     @Override
@@ -167,9 +169,21 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
 
     @Override
     public void doSomething(Object o) {
-        new DownloadImageTask(imageButtonAdventure).execute(((String[]) o)[0]);
+        if (((String[]) o).length > 1 || ((String[]) o)[0] == null)
+            new DownloadImageTask(imageButtonAdventure).execute(((String[]) o)[0]);
+        else
+            Log.d("ABC", "doSomething: " + ((String[]) o));
+        if (((String[]) o).length > 2 || ((String[]) o)[1] == null)
         new DownloadImageTask(imageButtonAnimal).execute(((String[]) o)[1]);
+        else
+            Log.d("ABC", "doSomething: " + ((String[]) o));
+        if (((String[]) o).length > 3 || ((String[]) o)[2] == null)
         new DownloadImageTask(imageButtonPrincess).execute(((String[]) o)[2]);
+        else
+            Log.d("ABC", "doSomething: " + ((String[]) o));
+        if (((String[]) o).length > 4 || ((String[]) o)[3] == null)
         new DownloadImageTask(imageButtonTech).execute(((String[]) o)[3]);
+        else
+            Log.d("ABC", "doSomething: " + ((String[]) o));
     }
 }

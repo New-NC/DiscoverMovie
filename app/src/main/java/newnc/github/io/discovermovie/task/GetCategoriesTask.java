@@ -56,7 +56,7 @@ public class GetCategoriesTask extends AsyncTask<Integer, Void, String> {
 
         if (queryBuilder == null) {
             queryBuilder = new QueryBuilder()
-                    .url("http://192.168.1.35:8080")
+                    .url("http://192.168.2.190:8080")
                     .service("movies").category(params[0]);
         }
 
