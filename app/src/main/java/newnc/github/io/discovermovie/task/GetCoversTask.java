@@ -119,7 +119,7 @@ public class GetCoversTask extends AsyncTask<Void, Void, String> {
         log("END onPostExecute");
     }
 
-    private static final String CATEG = "GetMoviesTask";
+    private static final String CATEG = "GetCoversTask";
     private static int v = 0;
     private int vv;
     private void setVV() {

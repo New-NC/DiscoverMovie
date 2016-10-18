@@ -93,6 +93,11 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
     //function to highlight a button when clicked
     public void highlightButton(ImageButton imageButtonClicked) {
         imageButtonClicked.setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
+
+        if (buttonNemo(imageButtonClicked))
+            AppController.getInstance().setCover(1);
+        else if (buttonPets(imageButtonClicked))
+            AppController.getInstance().setCover(0);
     }
 
     //function to disable the highlight when another button is clicked
@@ -123,5 +128,3 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
         new DownloadImageTask(imageButtonTopRated).execute(((String[]) o)[1]);
     }
 }
-
-

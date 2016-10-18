@@ -58,6 +58,7 @@ public class GetCategoriesTask extends AsyncTask<Integer, Void, String> {
             queryBuilder = new QueryBuilder()
                     .url("http://192.168.2.190:8080")
                     .service("movies").category(params[0]);
+            log(params[0].toString());
         }
 
         // http://stackoverflow.com/questions/10500775/parse-json-from-httpurlconnection-object
@@ -122,7 +123,7 @@ public class GetCategoriesTask extends AsyncTask<Integer, Void, String> {
         log("END onPostExecute");
     }
 
-    private static final String CATEG = "GetMoviesTask";
+    private static final String CATEG = "GetCategoriesTask";
     private static int v = 0;
     private int vv;
     private void setVV() {

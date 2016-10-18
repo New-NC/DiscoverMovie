@@ -43,8 +43,10 @@ public class QueryBuilder {
 
     public QueryBuilder result(int typeId, int categoryId) {
         this.typeId = new Integer(typeId);
-        this.categoryId = categoryId;
+        this.categoryId = new Integer(categoryId);
         covers = false;
+
+        Log.i(toString(), this.typeId.toString());
 
         return this;
     }
@@ -87,7 +89,7 @@ public class QueryBuilder {
         if (service.isEmpty()) return null; else stringBuilder.append(service);
         if (covers) stringBuilder.append("/covers");
         if (typeId != null) stringBuilder.append("/results/" + typeId.intValue() + "/" + categoryId.intValue());
-        if (categoryId != null) stringBuilder.append("/categories/" + categoryId.intValue());
+        else if (categoryId != null) stringBuilder.append("/categories/" + categoryId.intValue());
 
         String query = stringBuilder.substring(0);
 

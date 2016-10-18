@@ -10,8 +10,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import newnc.github.io.discovermovie.model.Movie;
+import newnc.github.io.discovermovie.task.GetCategoriesTask;
 import newnc.github.io.discovermovie.task.GetCoversTask;
 import newnc.github.io.discovermovie.task.GetMoviesTask;
+import newnc.github.io.discovermovie.task.GetResultTask;
 import newnc.github.io.discovermovie.task.TaskCallback;
 
 /**
@@ -23,6 +25,9 @@ public class AppController {
      * A list of loaded products.
      */
     private List<Movie> movies;
+
+    private int cover;
+    private int categorie;
 
     /**
      * A object implementing the TaskCallback interface, just a try to simulate callback in JS.
@@ -108,6 +113,14 @@ public class AppController {
         log("END loadCoversFrom");
     }
 
+    public void setCover(int cover) {
+        this.cover = cover;
+    }
+
+    public void setCategorie(int categorie) {
+        this.categorie = categorie;
+    }
+
     /**
      * Loads categories by pass our API.
      */
@@ -115,7 +128,7 @@ public class AppController {
         log("BEGIN loadCategories");
 
         callbackObject = callback;
-        new GetCoversTask().execute();
+        new GetCategoriesTask().execute(cover);
 
         log("END loadCategories");
     }
@@ -130,8 +143,8 @@ public class AppController {
         log("BEGIN loadCategoriesFrom");
 
         try {
-            String[] coversPath = new String[2];
-            for (int i = 0; i < 2; i++)
+            String[] coversPath = new String[4];
+            for (int i = 0; i < 4; i++)
                 coversPath[i] = callback.getString(i);
             callbackObject.doSomething(coversPath);
         }catch (JSONException e) {
@@ -148,7 +161,7 @@ public class AppController {
         log("BEGIN loadResult");
 
         callbackObject = callback;
-        new GetCoversTask().execute();
+        new GetResultTask().execute(cover, categorie);
 
         log("END loadResult");
     }
@@ -163,8 +176,8 @@ public class AppController {
         log("BEGIN loadResultFrom");
 
         try {
-            String[] coversPath = new String[2];
-            for (int i = 0; i < 2; i++)
+            String[] coversPath = new String[5];
+            for (int i = 0; i < 5; i++)
                 coversPath[i] = callback.getString(i);
             callbackObject.doSomething(coversPath);
         }catch (JSONException e) {

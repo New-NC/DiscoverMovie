@@ -50,6 +50,8 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
             disableHighlightButton(imageButtonTech);
             disableHighlightButton(imageButtonPrincess);
             disableHighlightButton(imageButtonAdventure);
+
+            AppController.getInstance().setCategorie(1);
         }
         if (buttonTech(v)) {
             buttonReturnHome.setVisibility(View.INVISIBLE);
@@ -60,6 +62,7 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
             disableHighlightButton(imageButtonPrincess);
             disableHighlightButton(imageButtonAdventure);
 
+            AppController.getInstance().setCategorie(3);
         }
         if (buttonPrincess(v)) {
             buttonReturnHome.setVisibility(View.INVISIBLE);
@@ -69,6 +72,8 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
             disableHighlightButton(imageButtonAnimal);
             disableHighlightButton(imageButtonTech);
             disableHighlightButton(imageButtonAdventure);
+
+            AppController.getInstance().setCategorie(2);
         }
         if (buttonAdventure(v)) {
             buttonReturnHome.setVisibility(View.INVISIBLE);
@@ -78,6 +83,8 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
             disableHighlightButton(imageButtonAnimal);
             disableHighlightButton(imageButtonPrincess);
             disableHighlightButton(imageButtonTech);
+
+            AppController.getInstance().setCategorie(0);
         }
         if(buttonNextQuestion(v)){
             Intent myIntent = new Intent(v.getContext(), Results.class); /** Class name here */
@@ -169,6 +176,10 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
 
     @Override
     public void doSomething(Object o) {
+        Log.d("ABC1", "doSomething: " + o);
+        Log.d("ABC2", "doSomething: " + (String[]) o);
+        Log.d("ABC3", "doSomething: " + ((String[]) o).length);
+        Log.d("ABC3", "doSomething: " + ((String[]) o)[0]);
         if (((String[]) o).length > 1 || ((String[]) o)[0] == null)
             new DownloadImageTask(imageButtonAdventure).execute(((String[]) o)[0]);
         else
