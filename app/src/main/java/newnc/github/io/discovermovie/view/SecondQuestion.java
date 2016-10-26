@@ -9,6 +9,7 @@ import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 
 import newnc.github.io.discovermovie.R;
 import newnc.github.io.discovermovie.controller.AppController;
@@ -18,9 +19,13 @@ import newnc.github.io.discovermovie.task.TaskCallback;
 public class    SecondQuestion extends AppCompatActivity implements View.OnClickListener, TaskCallback {
 
     ImageButton imageButtonAnimal;
+    ProgressBar progressBarAnimal;
     ImageButton imageButtonTech;
+    ProgressBar progressBarTech;
     ImageButton imageButtonPrincess;
+    ProgressBar progressBarPrincess;
     ImageButton imageButtonAdventure;
+    ProgressBar progressBarAdventure;
     Button      buttonNextQuestion;
     Button buttonReturnHome;
 
@@ -87,6 +92,8 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
             AppController.getInstance().setCategorie(0);
         }
         if(buttonNextQuestion(v)){
+            AppController.getInstance().loadResult(this);
+
             Intent myIntent = new Intent(v.getContext(), Results.class); /** Class name here */
             startActivityForResult(myIntent, 0);
         }
@@ -156,12 +163,16 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
     private void setClickListener() {
         imageButtonAnimal = (ImageButton) findViewById(R.id.animal);
         imageButtonAnimal.setOnClickListener(this);
+        progressBarAnimal = (ProgressBar) findViewById(R.id.animalProgress);
         imageButtonTech = (ImageButton) findViewById(R.id.tech);
         imageButtonTech.setOnClickListener(this);
+        progressBarTech = (ProgressBar) findViewById(R.id.techProgress);
         imageButtonPrincess = (ImageButton) findViewById(R.id.princess);
         imageButtonPrincess.setOnClickListener(this);
+        progressBarPrincess = (ProgressBar) findViewById(R.id.princessProgress);
         imageButtonAdventure = (ImageButton) findViewById(R.id.adventure);
         imageButtonAdventure.setOnClickListener(this);
+        progressBarAdventure = (ProgressBar) findViewById(R.id.adventureProgress);
         buttonNextQuestion = (Button) findViewById(R.id.nextQuestion);
         buttonNextQuestion.setOnClickListener(this);
         buttonReturnHome = (Button) findViewById(R.id.returnHome);
@@ -181,19 +192,19 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
         Log.d("ABC3", "doSomething: " + ((String[]) o).length);
         Log.d("ABC3", "doSomething: " + ((String[]) o)[0]);
         if (((String[]) o).length > 1 || ((String[]) o)[0] == null)
-            new DownloadImageTask(imageButtonAdventure).execute(((String[]) o)[0]);
+            new DownloadImageTask(imageButtonAdventure, progressBarAdventure).execute(((String[]) o)[0]);
         else
             Log.d("ABC", "doSomething: " + ((String[]) o));
         if (((String[]) o).length > 2 || ((String[]) o)[1] == null)
-        new DownloadImageTask(imageButtonAnimal).execute(((String[]) o)[1]);
+        new DownloadImageTask(imageButtonAnimal, progressBarAnimal).execute(((String[]) o)[1]);
         else
             Log.d("ABC", "doSomething: " + ((String[]) o));
         if (((String[]) o).length > 3 || ((String[]) o)[2] == null)
-        new DownloadImageTask(imageButtonPrincess).execute(((String[]) o)[2]);
+        new DownloadImageTask(imageButtonPrincess, progressBarPrincess).execute(((String[]) o)[2]);
         else
             Log.d("ABC", "doSomething: " + ((String[]) o));
         if (((String[]) o).length > 4 || ((String[]) o)[3] == null)
-        new DownloadImageTask(imageButtonTech).execute(((String[]) o)[3]);
+        new DownloadImageTask(imageButtonTech, progressBarTech).execute(((String[]) o)[3]);
         else
             Log.d("ABC", "doSomething: " + ((String[]) o));
     }

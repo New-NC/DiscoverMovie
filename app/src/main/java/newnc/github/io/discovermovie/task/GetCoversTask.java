@@ -48,12 +48,12 @@ public class GetCoversTask extends AsyncTask<Void, Void, String> {
      * @return the json callback from the query.
      */
     @Override
-    protected String doInBackground(Void... params) {
+    public String doInBackground(Void... params) {
         log("BEGIN doInBackground");
 
         if (queryBuilder == null) {
             queryBuilder = new QueryBuilder()
-                    .url("http://192.168.2.190:8080")
+                    .url(QueryBuilder.herokuURL)
                     .service("movies").covers();
         }
 
@@ -104,7 +104,7 @@ public class GetCoversTask extends AsyncTask<Void, Void, String> {
      * @param s the json callback from querying the api.
      */
     @Override
-    protected void onPostExecute(String s) {
+    public void onPostExecute(String s) {
         log("BEGIN onPostExecute");
 
         try {

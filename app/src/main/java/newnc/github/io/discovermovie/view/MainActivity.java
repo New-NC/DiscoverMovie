@@ -18,7 +18,7 @@ public class MainActivity extends AppCompatActivity implements TaskCallback {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        AppController.getInstance().loadMovies(this);
+        //AppController.getInstance().loadCovers();
     }
 
     public void startQuestionnaire(View view) {

@@ -26,58 +26,121 @@
             android:gravity="center"
             android:id="@+id/textView1"/>
 
-        <ImageButton
-            android:id="@+id/result1"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:background="@drawable/pets"
-            android:scaleType="fitXY" />
+            android:layout_height="400dp">
+
+            <ImageButton
+                android:id="@+id/result1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/pets"
+                android:scaleType="fitXY"
+                android:visibility="invisible" />
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="visible"
+                android:id="@+id/result1Progress"/>
+        </RelativeLayout>
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="40dp"/>
 
-        <ImageButton
-            android:id="@+id/result2"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:background="@drawable/nemo"
-            android:scaleType="fitXY" />
+            android:layout_height="400dp">
+
+            <ImageButton
+                android:id="@+id/result2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/nemo"
+                android:scaleType="fitXY"
+                android:visibility="invisible" />
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="visible"
+                android:id="@+id/result2Progress"/>
+        </RelativeLayout>
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="40dp"/>
 
-        <ImageButton
-            android:id="@+id/result3"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:src="@drawable/pets"
-            android:scaleType="fitXY"
-            android:background="@color/colorPrimaryDark" />
+            android:layout_height="400dp">
+
+            <ImageButton
+                android:id="@+id/result3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/pets"
+                android:scaleType="fitXY"
+                android:visibility="invisible" />
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="visible"
+                android:id="@+id/result3Progress"/>
+        </RelativeLayout>
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="40dp"/>
 
-        <ImageButton
-            android:id="@+id/result4"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:src="@drawable/nemo"
-            android:scaleType="fitXY"
-            android:background="@color/colorPrimaryDark" />
+            android:layout_height="400dp">
+
+            <ImageButton
+                android:id="@+id/result4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/nemo"
+                android:scaleType="fitXY"
+                android:visibility="invisible" />
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="visible"
+                android:id="@+id/result4Progress"/>
+        </RelativeLayout>
 
         <Space
             android:layout_width="match_parent"
             android:layout_height="40dp"/>
 
-        <ImageButton
-            android:id="@+id/result5"
+        <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="400dp"
-            android:background="@drawable/pets"
-            android:scaleType="fitXY" />
+            android:layout_height="400dp">
+
+            <ImageButton
+                android:id="@+id/result5"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/pets"
+                android:scaleType="fitXY"
+                android:visibility="invisible" />
+
+            <ProgressBar
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:visibility="visible"
+                android:id="@+id/result5Progress"/>
+        </RelativeLayout>
 
         <Button
             android:id="@+id/returnHome"

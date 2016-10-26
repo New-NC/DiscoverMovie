@@ -4,8 +4,10 @@ import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.AsyncTask;
 import android.util.Log;
+import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 
 import java.io.InputStream;
 import java.net.URL;
@@ -16,6 +18,7 @@ import java.net.URL;
  */
 public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
     ImageView image;
+    ProgressBar progressBar;
 
     private String IMGURL = "https://image.tmdb.org/t/p/w500";
 
@@ -24,8 +27,11 @@ public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
      *
      * @param image the <code>ImageView</code> to load the image.
      */
-    public DownloadImageTask(ImageButton image) {
+    public DownloadImageTask(ImageButton image) { this.image = image; }
+
+    public DownloadImageTask(ImageButton image, ProgressBar progressBar) {
         this.image = image;
+        this.progressBar = progressBar;
     }
 
     /**
@@ -66,6 +72,8 @@ public class DownloadImageTask extends AsyncTask<String, Void, Bitmap> {
         log("BEGIN onPostExecute");
 
         image.setImageBitmap(bitmap);
+        image.setVisibility(View.VISIBLE);
+        progressBar.setVisibility(View.INVISIBLE);
 
         log("END onPostExecute");
     }

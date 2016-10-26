@@ -75,30 +75,56 @@
             android:layout_height="match_parent"
             android:layout_weight="2">
 
-            <ImageButton
-                android:contentDescription="@string/imageBestRated"
-                android:id="@+id/bestRated"
+            <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="11"
-                android:background="@drawable/nemo"
-                android:scaleType="fitXY"
-                />
+                android:layout_weight="11">
+
+                <ImageButton
+                    android:contentDescription="@string/imageBestRated"
+                    android:id="@+id/bestRated"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/nemo"
+                    android:scaleType="fitXY"
+                    android:adjustViewBounds="true"
+                    android:visibility="invisible"/>
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="visible"
+                    android:id="@+id/bestRatedProgress" />
+            </RelativeLayout>
 
             <Space
                 android:layout_width="10dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"/>
 
-            <ImageButton
-                android:contentDescription="@string/imageNewest"
-                android:id="@+id/newest"
+            <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="11"
-                android:background="@drawable/pets"
-                android:scaleType="fitXY"
-                />
+                android:layout_weight="11">
+
+                <ImageButton
+                    android:contentDescription="@string/imageNewest"
+                    android:id="@+id/newest"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/pets"
+                    android:scaleType="fitXY"
+                    android:adjustViewBounds="true"
+                    android:visibility="invisible"/>
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="visible"
+                    android:id="@+id/newestProgress" />
+            </RelativeLayout>
 
         </LinearLayout>
 

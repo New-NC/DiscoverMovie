@@ -87,7 +87,9 @@ public class AppController {
         log("BEGIN loadCovers");
 
         callbackObject = callback;
-        new GetCoversTask().execute();
+        GetCoversTask task = new GetCoversTask();
+        //task.onPostExecute(task.doInBackground());
+        task.execute();
 
         log("END loadCovers");
     }
@@ -128,7 +130,9 @@ public class AppController {
         log("BEGIN loadCategories");
 
         callbackObject = callback;
-        new GetCategoriesTask().execute(cover);
+        GetCategoriesTask task = new GetCategoriesTask();
+        //task.onPostExecute(task.doInBackground(cover));
+        task.execute(cover);
 
         log("END loadCategories");
     }
@@ -161,7 +165,9 @@ public class AppController {
         log("BEGIN loadResult");
 
         callbackObject = callback;
-        new GetResultTask().execute(cover, categorie);
+        GetResultTask task = new GetResultTask();
+        //task.onPostExecute(task.doInBackground(cover, categorie));
+        task.execute(cover, categorie);
 
         log("END loadResult");
     }

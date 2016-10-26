@@ -39,26 +39,54 @@
             android:layout_height="match_parent"
             android:layout_weight="10">
 
-            <ImageButton
-                android:id="@+id/animal"
+            <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="11"
-                android:background="@drawable/nemo"
-                android:scaleType="fitXY" />
+                android:layout_weight="11">
+
+                <ImageButton
+                    android:id="@+id/animal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/nemo"
+                    android:scaleType="fitXY"
+                    android:visibility="invisible" />
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="visible"
+                    android:id="@+id/animalProgress" />
+
+            </RelativeLayout>
 
             <Space
                 android:layout_width="10dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"/>
 
-            <ImageButton
-                android:id="@+id/tech"
+            <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="11"
-                android:background="@drawable/pets"
-                android:scaleType="fitXY" />
+                android:layout_weight="11">
+
+                <ImageButton
+                    android:id="@+id/tech"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/pets"
+                    android:scaleType="fitXY"
+                    android:visibility="invisible" />
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="visible"
+                    android:id="@+id/techProgress" />
+
+            </RelativeLayout>
 
         </LinearLayout>
 
@@ -80,25 +108,54 @@
             android:layout_height="match_parent"
             android:layout_weight="10">
 
-            <ImageButton
-                android:id="@+id/princess"
+            <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="11"
-                android:background="@drawable/nemo"
-                android:scaleType="fitXY" />
+                android:layout_weight="11">
+
+                <ImageButton
+                    android:id="@+id/princess"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/nemo"
+                    android:scaleType="fitXY"
+                    android:visibility="invisible" />
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="visible"
+                    android:id="@+id/princessProgress" />
+
+            </RelativeLayout>
+
             <Space
                 android:layout_width="10dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"/>
 
-            <ImageButton
-                android:id="@+id/adventure"
+            <RelativeLayout
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
-                android:layout_weight="11"
-                android:background="@drawable/pets"
-                android:scaleType="fitXY" />
+                android:layout_weight="11">
+
+                <ImageButton
+                    android:id="@+id/adventure"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/pets"
+                    android:scaleType="fitXY"
+                    android:visibility="invisible" />
+
+                <ProgressBar
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerInParent="true"
+                    android:visibility="visible"
+                    android:id="@+id/adventureProgress" />
+
+            </RelativeLayout>
 
         </LinearLayout>
 

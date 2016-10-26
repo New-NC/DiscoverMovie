@@ -97,4 +97,7 @@ public class QueryBuilder {
 
         return query;
     }
+
+    public static String lanURL = "http:/192.168.0.37:8080/";
+    public static String herokuURL = "https://infinite-brushlands-81913.herokuapp.com";
 }

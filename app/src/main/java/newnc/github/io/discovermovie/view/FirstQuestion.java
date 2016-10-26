@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ProgressBar;
 
 import newnc.github.io.discovermovie.R;
 import newnc.github.io.discovermovie.controller.AppController;
@@ -17,9 +18,11 @@ import newnc.github.io.discovermovie.task.TaskCallback;
 public class FirstQuestion extends AppCompatActivity implements View.OnClickListener, TaskCallback {
 
     ImageButton imageButtonTopRated;
+    ProgressBar progressBarTopRated;
     ImageButton imageButtonNewest;
+    ProgressBar progressBarNewest;
     Button      buttonNextQuestion;
-    Button buttonReturnHome;
+    Button      buttonReturnHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -109,8 +112,10 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
     private void setClickListener() {
         imageButtonTopRated = (ImageButton) findViewById(R.id.bestRated);
         imageButtonTopRated.setOnClickListener(this);
+        progressBarTopRated = (ProgressBar) findViewById(R.id.bestRatedProgress);
         imageButtonNewest = (ImageButton) findViewById(R.id.newest);
         imageButtonNewest.setOnClickListener(this);
+        progressBarNewest = (ProgressBar) findViewById(R.id.newestProgress);
         buttonNextQuestion = (Button) findViewById(R.id.nextQuestion);
         buttonNextQuestion.setOnClickListener(this);
         buttonReturnHome = (Button) findViewById(R.id.returnHome);
@@ -124,7 +129,7 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void doSomething(Object o) {
-        new DownloadImageTask(imageButtonNewest).execute(((String[]) o)[0]);
-        new DownloadImageTask(imageButtonTopRated).execute(((String[]) o)[1]);
+        new DownloadImageTask(imageButtonNewest, progressBarNewest).execute(((String[]) o)[0]);
+        new DownloadImageTask(imageButtonTopRated, progressBarTopRated).execute(((String[]) o)[1]);
     }
 }

@@ -48,7 +48,7 @@ public class GetCategoriesTask extends AsyncTask<Integer, Void, String> {
      * @return the json callback from the query.
      */
     @Override
-    protected String doInBackground(Integer... params) {
+    public String doInBackground(Integer... params) {
         log("BEGIN doInBackground");
 
         if (params.length < 1)
@@ -56,7 +56,7 @@ public class GetCategoriesTask extends AsyncTask<Integer, Void, String> {
 
         if (queryBuilder == null) {
             queryBuilder = new QueryBuilder()
-                    .url("http://192.168.2.190:8080")
+                    .url(QueryBuilder.herokuURL)
                     .service("movies").category(params[0]);
             log(params[0].toString());
         }
@@ -108,7 +108,7 @@ public class GetCategoriesTask extends AsyncTask<Integer, Void, String> {
      * @param s the json callback from querying the api.
      */
     @Override
-    protected void onPostExecute(String s) {
+    public void onPostExecute(String s) {
         log("BEGIN onPostExecute");
 
         try {
