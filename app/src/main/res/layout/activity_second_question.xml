@@ -45,10 +45,10 @@
                 android:layout_weight="11">
 
                 <ImageButton
-                    android:id="@+id/animal"
+                    android:id="@+id/adventure"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/nemo"
+                    android:background="@drawable/pets"
                     android:scaleType="fitXY"
                     android:visibility="invisible" />
 
@@ -57,7 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:visibility="visible"
-                    android:id="@+id/animalProgress" />
+                    android:id="@+id/adventureProgress" />
 
             </RelativeLayout>
 
@@ -72,10 +72,10 @@
                 android:layout_weight="11">
 
                 <ImageButton
-                    android:id="@+id/tech"
+                    android:id="@+id/animal"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/pets"
+                    android:background="@drawable/nemo"
                     android:scaleType="fitXY"
                     android:visibility="invisible" />
 
@@ -84,7 +84,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:visibility="visible"
-                    android:id="@+id/techProgress" />
+                    android:id="@+id/animalProgress" />
 
             </RelativeLayout>
 
@@ -141,7 +141,7 @@
                 android:layout_weight="11">
 
                 <ImageButton
-                    android:id="@+id/adventure"
+                    android:id="@+id/tech"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/pets"
@@ -153,7 +153,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:visibility="visible"
-                    android:id="@+id/adventureProgress" />
+                    android:id="@+id/techProgress" />
 
             </RelativeLayout>
 

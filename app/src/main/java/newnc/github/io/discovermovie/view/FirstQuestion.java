@@ -132,4 +132,5 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
         new DownloadImageTask(imageButtonNewest, progressBarNewest).execute(((String[]) o)[0]);
         new DownloadImageTask(imageButtonTopRated, progressBarTopRated).execute(((String[]) o)[1]);
     }
+
 }

@@ -27,7 +27,7 @@ public class AppController {
     private List<Movie> movies;
 
     private int cover;
-    private int categorie;
+    private int categories;
 
     /**
      * A object implementing the TaskCallback interface, just a try to simulate callback in JS.
@@ -119,8 +119,8 @@ public class AppController {
         this.cover = cover;
     }
 
-    public void setCategorie(int categorie) {
-        this.categorie = categorie;
+    public void setCategorie(int categories) {
+        this.categories = categories;
     }
 
     /**
@@ -166,8 +166,8 @@ public class AppController {
 
         callbackObject = callback;
         GetResultTask task = new GetResultTask();
-        //task.onPostExecute(task.doInBackground(cover, categorie));
-        task.execute(cover, categorie);
+        //task.onPostExecute(task.doInBackground(cover, categories));
+        task.execute(cover, categories);
 
         log("END loadResult");
     }

@@ -47,39 +47,6 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View v) {
 
-        if (buttonAnimal(v)) {
-            buttonReturnHome.setVisibility(View.INVISIBLE);
-            buttonNextQuestion.setVisibility(View.VISIBLE);
-
-            highlightButton(imageButtonAnimal);
-            disableHighlightButton(imageButtonTech);
-            disableHighlightButton(imageButtonPrincess);
-            disableHighlightButton(imageButtonAdventure);
-
-            AppController.getInstance().setCategorie(1);
-        }
-        if (buttonTech(v)) {
-            buttonReturnHome.setVisibility(View.INVISIBLE);
-            buttonNextQuestion.setVisibility(View.VISIBLE);
-
-            highlightButton(imageButtonTech);
-            disableHighlightButton(imageButtonAnimal);
-            disableHighlightButton(imageButtonPrincess);
-            disableHighlightButton(imageButtonAdventure);
-
-            AppController.getInstance().setCategorie(3);
-        }
-        if (buttonPrincess(v)) {
-            buttonReturnHome.setVisibility(View.INVISIBLE);
-            buttonNextQuestion.setVisibility(View.VISIBLE);
-
-            highlightButton(imageButtonPrincess);
-            disableHighlightButton(imageButtonAnimal);
-            disableHighlightButton(imageButtonTech);
-            disableHighlightButton(imageButtonAdventure);
-
-            AppController.getInstance().setCategorie(2);
-        }
         if (buttonAdventure(v)) {
             buttonReturnHome.setVisibility(View.INVISIBLE);
             buttonNextQuestion.setVisibility(View.VISIBLE);
@@ -90,12 +57,59 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
             disableHighlightButton(imageButtonTech);
 
             AppController.getInstance().setCategorie(0);
+
+            return;
         }
+
+        if (buttonAnimal(v)) {
+            buttonReturnHome.setVisibility(View.INVISIBLE);
+            buttonNextQuestion.setVisibility(View.VISIBLE);
+
+            highlightButton(imageButtonAnimal);
+            disableHighlightButton(imageButtonAdventure);
+            disableHighlightButton(imageButtonPrincess);
+            disableHighlightButton(imageButtonTech);
+
+            AppController.getInstance().setCategorie(1);
+
+            return;
+        }
+
+        if (buttonPrincess(v)) {
+            buttonReturnHome.setVisibility(View.INVISIBLE);
+            buttonNextQuestion.setVisibility(View.VISIBLE);
+
+            highlightButton(imageButtonPrincess);
+            disableHighlightButton(imageButtonAdventure);
+            disableHighlightButton(imageButtonAnimal);
+            disableHighlightButton(imageButtonTech);
+
+            AppController.getInstance().setCategorie(2);
+
+            return;
+        }
+
+        if (buttonTech(v)) {
+            buttonReturnHome.setVisibility(View.INVISIBLE);
+            buttonNextQuestion.setVisibility(View.VISIBLE);
+
+            highlightButton(imageButtonTech);
+            disableHighlightButton(imageButtonAdventure);
+            disableHighlightButton(imageButtonAnimal);
+            disableHighlightButton(imageButtonPrincess);
+
+            AppController.getInstance().setCategorie(3);
+
+            return;
+        }
+
         if(buttonNextQuestion(v)){
             AppController.getInstance().loadResult(this);
 
             Intent myIntent = new Intent(v.getContext(), Results.class); /** Class name here */
             startActivityForResult(myIntent, 0);
+
+            return;
         }
 
         if(buttonReturnHome(v)){
@@ -105,44 +119,28 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
 
     /* AUXILIARY FUNCTIONS */
 
+    //check if the button Adventure was clicked
+    public boolean buttonAdventure(View v) {
+        return (v.getId() == R.id.adventure);
+    }
+
     //check if the button Animal was clicked
     public boolean buttonAnimal(View v) {
-        if (v.getId() == R.id.animal) {
-            return true;
-        } else
-            return false;
+        return (v.getId() == R.id.animal);
+    }
+
+    //check if the button Princess was clicked
+    public boolean buttonPrincess(View v) {
+        return (v.getId() == R.id.princess);
     }
 
     //check if the button Tech was clicked
     public boolean buttonTech(View v) {
-        if (v.getId() == R.id.tech) {
-            return true;
-        } else
-            return false;
-    }
-
-
-    //check if the button Princess was clicked
-    public boolean buttonPrincess(View v) {
-        if (v.getId() == R.id.princess) {
-            return true;
-        } else
-            return false;
-    }
-
-    //check if the button Adventure was clicked
-    public boolean buttonAdventure(View v) {
-        if (v.getId() == R.id.adventure) {
-            return true;
-        } else
-            return false;
+        return (v.getId() == R.id.tech);
     }
 
     public boolean buttonNextQuestion(View v){
-        if (v.getId() == R.id.nextQuestion){
-            return true;
-        } else
-            return false;
+        return (v.getId() == R.id.nextQuestion);
     }
 
     public boolean buttonReturnHome(View v){
@@ -187,25 +185,22 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
 
     @Override
     public void doSomething(Object o) {
-        Log.d("ABC1", "doSomething: " + o);
-        Log.d("ABC2", "doSomething: " + (String[]) o);
-        Log.d("ABC3", "doSomething: " + ((String[]) o).length);
-        Log.d("ABC3", "doSomething: " + ((String[]) o)[0]);
-        if (((String[]) o).length > 1 || ((String[]) o)[0] == null)
+        Log.d("ABC1", "doSomething: o = " + o);
+        Log.d("ABC2", "doSomething: string o = " + (String[]) o);
+        Log.d("ABC3", "doSomething: tam o = " + ((String[]) o).length);
+        Log.d("ABC3", "doSomething: o[0] = " + ((String[]) o)[0]);
+
+        if (((String[]) o)[0] != null)
             new DownloadImageTask(imageButtonAdventure, progressBarAdventure).execute(((String[]) o)[0]);
-        else
-            Log.d("ABC", "doSomething: " + ((String[]) o));
-        if (((String[]) o).length > 2 || ((String[]) o)[1] == null)
-        new DownloadImageTask(imageButtonAnimal, progressBarAnimal).execute(((String[]) o)[1]);
-        else
-            Log.d("ABC", "doSomething: " + ((String[]) o));
-        if (((String[]) o).length > 3 || ((String[]) o)[2] == null)
-        new DownloadImageTask(imageButtonPrincess, progressBarPrincess).execute(((String[]) o)[2]);
-        else
-            Log.d("ABC", "doSomething: " + ((String[]) o));
-        if (((String[]) o).length > 4 || ((String[]) o)[3] == null)
-        new DownloadImageTask(imageButtonTech, progressBarTech).execute(((String[]) o)[3]);
-        else
-            Log.d("ABC", "doSomething: " + ((String[]) o));
+
+        if (((String[]) o)[1] != null)
+            new DownloadImageTask(imageButtonAnimal, progressBarAnimal).execute(((String[]) o)[1]);
+
+        if (((String[]) o)[2] != null)
+            new DownloadImageTask(imageButtonPrincess, progressBarPrincess).execute(((String[]) o)[2]);
+
+        if (((String[]) o)[3] != null)
+            new DownloadImageTask(imageButtonTech, progressBarTech).execute(((String[]) o)[3]);
+        
     }
 }

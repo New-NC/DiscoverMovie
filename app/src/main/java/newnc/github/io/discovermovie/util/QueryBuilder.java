@@ -83,13 +83,26 @@ public class QueryBuilder {
     public String build() {
         StringBuilder stringBuilder = new StringBuilder();
 
-        if (url.isEmpty()) return null; else stringBuilder.append(url);
+        if (url.isEmpty())
+            return null;
+        else
+            stringBuilder.append(url);
+
         if (!url.endsWith("/"))
             stringBuilder.append("/");
-        if (service.isEmpty()) return null; else stringBuilder.append(service);
-        if (covers) stringBuilder.append("/covers");
-        if (typeId != null) stringBuilder.append("/results/" + typeId.intValue() + "/" + categoryId.intValue());
-        else if (categoryId != null) stringBuilder.append("/categories/" + categoryId.intValue());
+
+        if (service.isEmpty())
+            return null;
+        else
+            stringBuilder.append(service);
+
+        if (covers)
+            stringBuilder.append("/covers");
+
+        if (typeId != null && categoryId != null)
+            stringBuilder.append("/results/" + typeId.intValue() + "/" + categoryId.intValue());
+        else if
+            (categoryId != null) stringBuilder.append("/categories/" + categoryId.intValue());
 
         String query = stringBuilder.substring(0);
 
@@ -98,6 +111,6 @@ public class QueryBuilder {
         return query;
     }
 
-    public static String lanURL = "http:/192.168.0.37:8080/";
-    public static String herokuURL = "https://infinite-brushlands-81913.herokuapp.com";
+    public static String herokuURL = "http://192.168.0.4:8080/";
+    //public static String herokuURL = "https://infinite-brushlands-81913.herokuapp.com";
 }
