@@ -33,11 +33,6 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
         AppController.getInstance().loadCovers(this);
     }
 
-    @Override
-    public void onBackPressed() {
-        backButtonMainActivity();
-    }
-
 
 
     /*if(imageButtonTopRated.getColorFilter().equals(0x77000000)){
@@ -61,13 +56,14 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
             disableHighlightButton(imageButtonTopRated);
         }
 
-        if(buttonNextQuestion(v)){
+        if (buttonNextQuestion(v)){
             Intent myIntent = new Intent(v.getContext(), SecondQuestion.class); /** Class name here */
             startActivityForResult(myIntent, 0);
+            finish();
         }
 
-        if(buttonReturnHome(v)){
-            backButtonMainActivity();
+        if (buttonReturnHome(v)){
+            finish();
         }
 
     }
@@ -120,11 +116,6 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
         buttonNextQuestion.setOnClickListener(this);
         buttonReturnHome = (Button) findViewById(R.id.returnHome);
         buttonReturnHome.setOnClickListener(this);
-    }
-
-    public void backButtonMainActivity() {
-        Intent myIntent = new Intent(FirstQuestion.this, MainActivity.class); /** Class name here */
-        startActivityForResult(myIntent, 0);
     }
 
     @Override

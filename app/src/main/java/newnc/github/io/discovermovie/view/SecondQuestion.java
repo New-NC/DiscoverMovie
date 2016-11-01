@@ -39,12 +39,6 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
     }
 
     @Override
-    public void onBackPressed() {
-        backButtonMainActivity();
-    }
-
-
-    @Override
     public void onClick(View v) {
 
         if (buttonAdventure(v)) {
@@ -109,11 +103,11 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
             Intent myIntent = new Intent(v.getContext(), Results.class); /** Class name here */
             startActivityForResult(myIntent, 0);
 
-            return;
+            finish();
         }
 
         if(buttonReturnHome(v)){
-            backButtonMainActivity();
+            finish();
         }
     }
 
@@ -177,19 +171,9 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
         buttonReturnHome.setOnClickListener(this);
     }
 
-    public void backButtonMainActivity() {
-        Intent myIntent = new Intent(SecondQuestion.this, MainActivity.class); /** Class name here */
-        startActivityForResult(myIntent, 0);
-    }
-
 
     @Override
     public void doSomething(Object o) {
-        Log.d("ABC1", "doSomething: o = " + o);
-        Log.d("ABC2", "doSomething: string o = " + (String[]) o);
-        Log.d("ABC3", "doSomething: tam o = " + ((String[]) o).length);
-        Log.d("ABC3", "doSomething: o[0] = " + ((String[]) o)[0]);
-
         if (((String[]) o)[0] != null)
             new DownloadImageTask(imageButtonAdventure, progressBarAdventure).execute(((String[]) o)[0]);
 
