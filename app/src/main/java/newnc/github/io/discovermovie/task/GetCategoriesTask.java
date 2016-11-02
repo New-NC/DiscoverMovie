@@ -56,7 +56,7 @@ public class GetCategoriesTask extends AsyncTask<Integer, Void, String> {
 
         if (queryBuilder == null) {
             queryBuilder = new QueryBuilder()
-                    .url(QueryBuilder.herokuURL)
+                    .url(QueryBuilder.URL)
                     .service("movies").category(params[0]);
             log(params[0].toString());
         }

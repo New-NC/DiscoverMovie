@@ -52,7 +52,7 @@ public class GetMoviesTask extends AsyncTask<Void, Void, String> {
 
         if (queryBuilder == null) {
             queryBuilder = new QueryBuilder()
-                    .url(QueryBuilder.herokuURL)
+                    .url(QueryBuilder.URL)
                     .service("movies");
         }
 

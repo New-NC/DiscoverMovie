@@ -56,7 +56,7 @@ public class GetResultTask extends AsyncTask<Integer, Void, String> {
 
         if (queryBuilder == null) {
             queryBuilder = new QueryBuilder()
-                    .url(QueryBuilder.herokuURL)
+                    .url(QueryBuilder.URL)
                     .service("movies").result(params[0], params[1]);
         }
 

@@ -53,7 +53,7 @@ public class GetCoversTask extends AsyncTask<Void, Void, String> {
 
         if (queryBuilder == null) {
             queryBuilder = new QueryBuilder()
-                    .url(QueryBuilder.herokuURL)
+                    .url(QueryBuilder.URL)
                     .service("movies").covers();
         }
 
