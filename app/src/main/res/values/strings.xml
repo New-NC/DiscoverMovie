@@ -3,6 +3,7 @@
     <string name="button_startQuestionnaire">START</string>
     <string name="find_a_movie">Find a Movie!</string>
     <string name="which_kind_of_movie_do_you_prefer">Which kind of movie do you prefer?</string>
+    <string name="which_company_do_you_prefer">Which company do you prefer?</string>
     <string name="best_rated">Best Rated</string>
     <string name="newest">Newest</string>
     <string name="buttonNextQuestion">NEXT</string>

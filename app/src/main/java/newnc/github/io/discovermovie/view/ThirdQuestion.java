@@ -4,8 +4,6 @@ import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
-import android.view.KeyEvent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -16,23 +14,26 @@ import newnc.github.io.discovermovie.controller.AppController;
 import newnc.github.io.discovermovie.task.DownloadImageTask;
 import newnc.github.io.discovermovie.task.TaskCallback;
 
-public class    SecondQuestion extends AppCompatActivity implements View.OnClickListener, TaskCallback {
+/**
+ * Created by carolinapascalecampos on 08/11/16.
+ */
 
-    ImageButton imageButtonAnimal;
-    ProgressBar progressBarAnimal;
-    ImageButton imageButtonTech;
-    ProgressBar progressBarTech;
-    ImageButton imageButtonPrincess;
-    ProgressBar progressBarPrincess;
-    ImageButton imageButtonAdventure;
-    ProgressBar progressBarAdventure;
-    Button      buttonNextQuestion;
+public class ThirdQuestion extends AppCompatActivity implements View.OnClickListener, TaskCallback {
+    ImageButton imageButtonDisney;
+    ProgressBar progressBarDisney;
+    ImageButton imageButtonPixar;
+    ProgressBar progressBarPixar;
+    ImageButton imageButtonDreamworks;
+    ProgressBar progressBarDreamworks;
+    ImageButton imageButtonGhibili;
+    ProgressBar progressBarGhibili;
+    Button buttonNextQuestion;
     Button buttonReturnHome;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_second_question);
+        setContentView(R.layout.activity_third_question);
         setClickListener();
         buttonNextQuestion.setVisibility(View.INVISIBLE);
         AppController.getInstance().loadCategories(this);
@@ -41,56 +42,56 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
     @Override
     public void onClick(View v) {
 
-        if (buttonAdventure(v)) {
+        if (buttonDisney(v)) {
             buttonReturnHome.setVisibility(View.INVISIBLE);
             buttonNextQuestion.setVisibility(View.VISIBLE);
 
-            highlightButton(imageButtonAdventure);
-            disableHighlightButton(imageButtonAnimal);
-            disableHighlightButton(imageButtonPrincess);
-            disableHighlightButton(imageButtonTech);
+            highlightButton(imageButtonDisney);
+            disableHighlightButton(imageButtonPixar);
+            disableHighlightButton(imageButtonDreamworks);
+            disableHighlightButton(imageButtonGhibili);
 
             AppController.getInstance().setCategorie(0);
 
             return;
         }
 
-        if (buttonAnimal(v)) {
+        if (buttonPixar(v)) {
             buttonReturnHome.setVisibility(View.INVISIBLE);
             buttonNextQuestion.setVisibility(View.VISIBLE);
 
-            highlightButton(imageButtonAnimal);
-            disableHighlightButton(imageButtonAdventure);
-            disableHighlightButton(imageButtonPrincess);
-            disableHighlightButton(imageButtonTech);
+            highlightButton(imageButtonPixar);
+            disableHighlightButton(imageButtonGhibili);
+            disableHighlightButton(imageButtonDreamworks);
+            disableHighlightButton(imageButtonDisney);
 
             AppController.getInstance().setCategorie(1);
 
             return;
         }
 
-        if (buttonPrincess(v)) {
+        if (buttonDreamworks(v)) {
             buttonReturnHome.setVisibility(View.INVISIBLE);
             buttonNextQuestion.setVisibility(View.VISIBLE);
 
-            highlightButton(imageButtonPrincess);
-            disableHighlightButton(imageButtonAdventure);
-            disableHighlightButton(imageButtonAnimal);
-            disableHighlightButton(imageButtonTech);
+            highlightButton(imageButtonDreamworks);
+            disableHighlightButton(imageButtonDisney);
+            disableHighlightButton(imageButtonGhibili);
+            disableHighlightButton(imageButtonPixar);
 
             AppController.getInstance().setCategorie(2);
 
             return;
         }
 
-        if (buttonTech(v)) {
+        if (buttonGhibili(v)) {
             buttonReturnHome.setVisibility(View.INVISIBLE);
             buttonNextQuestion.setVisibility(View.VISIBLE);
 
-            highlightButton(imageButtonTech);
-            disableHighlightButton(imageButtonAdventure);
-            disableHighlightButton(imageButtonAnimal);
-            disableHighlightButton(imageButtonPrincess);
+            highlightButton(imageButtonGhibili);
+            disableHighlightButton(imageButtonPixar);
+            disableHighlightButton(imageButtonDisney);
+            disableHighlightButton(imageButtonDreamworks);
 
             AppController.getInstance().setCategorie(3);
 
@@ -114,23 +115,23 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
     /* AUXILIARY FUNCTIONS */
 
     //check if the button Adventure was clicked
-    public boolean buttonAdventure(View v) {
-        return (v.getId() == R.id.adventure);
+    public boolean buttonDisney(View v) {
+        return (v.getId() == R.id.disney);
     }
 
     //check if the button Animal was clicked
-    public boolean buttonAnimal(View v) {
-        return (v.getId() == R.id.animal);
+    public boolean buttonPixar(View v) {
+        return (v.getId() == R.id.pixar);
     }
 
     //check if the button Princess was clicked
-    public boolean buttonPrincess(View v) {
-        return (v.getId() == R.id.princess);
+    public boolean buttonDreamworks(View v) {
+        return (v.getId() == R.id.dreamworks);
     }
 
     //check if the button Tech was clicked
-    public boolean buttonTech(View v) {
-        return (v.getId() == R.id.tech);
+    public boolean buttonGhibili(View v) {
+        return (v.getId() == R.id.ghibili);
     }
 
     public boolean buttonNextQuestion(View v){
@@ -153,18 +154,18 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
 
 
     private void setClickListener() {
-        imageButtonAnimal = (ImageButton) findViewById(R.id.animal);
-        imageButtonAnimal.setOnClickListener(this);
-        progressBarAnimal = (ProgressBar) findViewById(R.id.animalProgress);
-        imageButtonTech = (ImageButton) findViewById(R.id.tech);
-        imageButtonTech.setOnClickListener(this);
-        progressBarTech = (ProgressBar) findViewById(R.id.techProgress);
-        imageButtonPrincess = (ImageButton) findViewById(R.id.princess);
-        imageButtonPrincess.setOnClickListener(this);
-        progressBarPrincess = (ProgressBar) findViewById(R.id.princessProgress);
-        imageButtonAdventure = (ImageButton) findViewById(R.id.adventure);
-        imageButtonAdventure.setOnClickListener(this);
-        progressBarAdventure = (ProgressBar) findViewById(R.id.adventureProgress);
+        imageButtonDisney = (ImageButton) findViewById(R.id.disney);
+        imageButtonDisney.setOnClickListener(this);
+        progressBarDisney = (ProgressBar) findViewById(R.id.disneyProgress);
+        imageButtonPixar = (ImageButton) findViewById(R.id.pixar);
+        imageButtonPixar.setOnClickListener(this);
+        progressBarPixar = (ProgressBar) findViewById(R.id.pixarProgress);
+        imageButtonDreamworks = (ImageButton) findViewById(R.id.dreamworks);
+        imageButtonDreamworks.setOnClickListener(this);
+        progressBarDreamworks = (ProgressBar) findViewById(R.id.dreamworksProgress);
+        imageButtonGhibili = (ImageButton) findViewById(R.id.ghibili);
+        imageButtonGhibili.setOnClickListener(this);
+        progressBarGhibili = (ProgressBar) findViewById(R.id.ghibiliProgress);
         buttonNextQuestion = (Button) findViewById(R.id.nextQuestion);
         buttonNextQuestion.setOnClickListener(this);
         buttonReturnHome = (Button) findViewById(R.id.returnHome);
@@ -175,16 +176,18 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
     @Override
     public void doSomething(Object o) {
         if (((String[]) o)[0] != null)
-            new DownloadImageTask(imageButtonAdventure, progressBarAdventure).execute(((String[]) o)[0]);
+            new DownloadImageTask(imageButtonDisney, progressBarDisney).execute(((String[]) o)[0]);
 
         if (((String[]) o)[1] != null)
-            new DownloadImageTask(imageButtonAnimal, progressBarAnimal).execute(((String[]) o)[1]);
+            new DownloadImageTask(imageButtonPixar, progressBarPixar).execute(((String[]) o)[1]);
 
         if (((String[]) o)[2] != null)
-            new DownloadImageTask(imageButtonPrincess, progressBarPrincess).execute(((String[]) o)[2]);
+            new DownloadImageTask(imageButtonDreamworks, progressBarDreamworks).execute(((String[]) o)[2]);
 
         if (((String[]) o)[3] != null)
-            new DownloadImageTask(imageButtonTech, progressBarTech).execute(((String[]) o)[3]);
-        
+            new DownloadImageTask(imageButtonGhibili, progressBarGhibili).execute(((String[]) o)[3]);
+
     }
 }
+
+
