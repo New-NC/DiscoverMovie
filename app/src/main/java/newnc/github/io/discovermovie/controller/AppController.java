@@ -11,6 +11,7 @@ import java.util.List;
 
 import newnc.github.io.discovermovie.model.Movie;
 import newnc.github.io.discovermovie.task.GetCategoriesTask;
+import newnc.github.io.discovermovie.task.GetCompaniesTask;
 import newnc.github.io.discovermovie.task.GetCoversTask;
 import newnc.github.io.discovermovie.task.GetMoviesTask;
 import newnc.github.io.discovermovie.task.GetResultTask;
@@ -131,7 +132,6 @@ public class AppController {
 
         callbackObject = callback;
         GetCategoriesTask task = new GetCategoriesTask();
-        //task.onPostExecute(task.doInBackground(cover));
         task.execute(cover);
 
         log("END loadCategories");
@@ -159,6 +159,40 @@ public class AppController {
     }
 
     /**
+     * Loads categories by pass our API.
+     */
+    public void loadCompanies(TaskCallback callback) {
+        log("BEGIN loadCompanies");
+
+        callbackObject = callback;
+        GetCompaniesTask task = new GetCompaniesTask();
+        task.execute(cover);
+
+        log("END loadCompanies");
+    }
+
+    /**
+     * This method is called in <code>GetCategoriesTask</code> (after <code>loadCategories</code>
+     * call).
+     *
+     * @param callback the json callback from api call.
+     */
+    public void loadCompaniesFrom(JSONArray callback) {
+        log("BEGIN loadCompaniesFrom");
+
+        try {
+            String[] coversPath = new String[4];
+            for (int i = 0; i < 4; i++)
+                coversPath[i] = callback.getString(i);
+            callbackObject.doSomething(coversPath);
+        }catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        log("END loadCompaniesFrom");
+    }
+
+    /**
      * Loads covers by pass our API.
      */
     public void loadResult(TaskCallback callback) {
@@ -166,7 +200,6 @@ public class AppController {
 
         callbackObject = callback;
         GetResultTask task = new GetResultTask();
-        //task.onPostExecute(task.doInBackground(cover, categories));
         task.execute(cover, categories);
 
         log("END loadResult");

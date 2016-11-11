@@ -36,7 +36,7 @@ public class ThirdQuestion extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.activity_third_question);
         setClickListener();
         buttonNextQuestion.setVisibility(View.INVISIBLE);
-        AppController.getInstance().loadCategories(this);
+        AppController.getInstance().loadCompanies(this);
     }
 
     @Override

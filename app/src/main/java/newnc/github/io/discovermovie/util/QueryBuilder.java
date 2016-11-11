@@ -12,6 +12,7 @@ public class QueryBuilder {
     private boolean covers = false;
     private Integer categoryId = null;
     private Integer typeId = null;
+    private boolean companies = false;
 
     public QueryBuilder url(String url) {
         this.url = url;
@@ -29,6 +30,7 @@ public class QueryBuilder {
         covers = true;
         categoryId = null;
         typeId = null;
+        companies = false;
 
         return this;
     }
@@ -37,6 +39,16 @@ public class QueryBuilder {
         categoryId = new Integer(id);
         covers = false;
         typeId = null;
+        companies = false;
+
+        return this;
+    }
+
+    public QueryBuilder companies() {
+        companies = true;
+        categoryId = null;
+        typeId = null;
+        covers = false;
 
         return this;
     }
@@ -45,6 +57,7 @@ public class QueryBuilder {
         this.typeId = new Integer(typeId);
         this.categoryId = new Integer(categoryId);
         covers = false;
+        companies = false;
 
         Log.i(toString(), this.typeId.toString());
 
@@ -55,6 +68,7 @@ public class QueryBuilder {
         categoryId = null;
         covers = false;
         typeId = null;
+        companies = false;
 
         return this;
     }
@@ -71,11 +85,13 @@ public class QueryBuilder {
         if (url == null || url.isEmpty()
                 || service == null)
             return false;
-        if (covers && (categoryId != null || typeId != null))
+        if (covers && (categoryId != null || typeId != null || companies))
             return false;
-        if (categoryId != null && covers)
+        if (categoryId != null && (covers || companies))
             return false;
-        if (typeId != null && (covers || categoryId == null))
+        if (typeId != null && (covers || categoryId == null || companies))
+            return false;
+        if (companies && (categoryId != null || typeId != null || covers))
             return false;
         return true;
     }
@@ -104,6 +120,9 @@ public class QueryBuilder {
         else if
             (categoryId != null) stringBuilder.append("/categories/" + categoryId.intValue());
 
+        if (companies)
+            stringBuilder.append("/companies");
+
         String query = stringBuilder.substring(0);
 
         Log.i(toString(), query);
@@ -111,7 +130,7 @@ public class QueryBuilder {
         return query;
     }
 
-    public static final String LANURL = "http://192.168.1.41:8080/";
+    public static final String LANURL = "http://192.168.1.37:8080/";
     public static final String HEROKUURL = "https://infinite-brushlands-81913.herokuapp.com";
-    public static final String URL = HEROKUURL;
+    public static final String URL = LANURL;
 }

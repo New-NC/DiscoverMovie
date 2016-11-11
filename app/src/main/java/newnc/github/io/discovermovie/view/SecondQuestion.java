@@ -100,7 +100,7 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
         if(buttonNextQuestion(v)){
             AppController.getInstance().loadResult(this);
 
-            Intent myIntent = new Intent(v.getContext(), Results.class); /** Class name here */
+            Intent myIntent = new Intent(v.getContext(), ThirdQuestion.class); /** Class name here */
             startActivityForResult(myIntent, 0);
 
             finish();
