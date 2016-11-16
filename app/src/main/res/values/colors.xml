@@ -10,4 +10,6 @@
     <color name="buttonText">#ffffff</color>
     <color name="backgroundButton">#E51F3C</color>
     <color name="text">#ffffff</color>
+    <color name="blueviolet">#8A2BE2</color>
+    <color name="staleblue">#6A5ACD</color>
 </resources>

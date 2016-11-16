@@ -12,5 +12,10 @@
     <string name="buttonReturn">RETURN</string>
     <string name="imageBestRated">Best Rated Movie</string>
     <string name="imageNewest">Newest</string>
+    <string name="movie_title">Finding Nemo</string>
+    <string name="release_date">Release date: 2003-05-30</string>
+    <string name="vote_avg">Vote average: 7.39</string>
+    <string name="time">Duration: 120</string>
+    <string name="overview">A tale which follows the comedic and eventful journeys of two fish, the fretful Marlin and his young son Nemo, who are separated from each other in the Great Barrier Reef when Nemo is unexpectedly taken from his home and thrust into a fish tank in a dentist's office overlooking Sydney Harbor. Buoyed by the companionship of a friendly but forgetful fish named Dory, the overly cautious Marlin embarks on a dangerous trek and finds himself the unlikely hero of an epic journey to rescue his son.</string>
     <string name="results">Results</string>>
 </resources>

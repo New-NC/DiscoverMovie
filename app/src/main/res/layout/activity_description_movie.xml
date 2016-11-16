@@ -98,20 +98,6 @@
                     android:gravity="center"
                     android:id="@+id/vote_avg"/>
 
-                <TextView
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:layout_marginTop="100dp"
-                    android:text="@string/time"
-                    android:textColor="@color/white"
-                    android:textSize="20sp"
-                    android:shadowColor="@color/black"
-                    android:shadowDx="-2"
-                    android:shadowDy="-2"
-                    android:shadowRadius="15"
-                    android:gravity="center"
-                    android:id="@+id/time"/>
-
             </RelativeLayout>
 
         </LinearLayout>
@@ -124,17 +110,20 @@
             android:gravity="center">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:text="@string/overview"
                 android:textColor="@color/white"
                 android:textStyle="bold"
                 android:textSize="15sp"
-                android:shadowColor="@color/black"
+                android:background="@color/staleblue"
                 android:shadowDx="-2"
                 android:shadowDy="-2"
                 android:shadowRadius="15"
                 android:gravity="center"
+                android:layout_marginRight="@dimen/activity_horizontal_margin"
+                android:layout_marginLeft="@dimen/activity_horizontal_margin"
+                android:layout_marginTop="5dp"
                 android:id="@+id/overview"/>
 
 
