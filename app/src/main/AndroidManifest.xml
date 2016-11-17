@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="newnc.github.io.discovermovie">
+    package="io.newnc.discovermovie">
 
     <application
         android:allowBackup="true"
@@ -20,6 +20,8 @@
         <activity android:name=".view.FirstQuestion"></activity>
         <activity android:name=".view.SecondQuestion"></activity>
         <activity android:name=".view.Results"></activity>
+
+        <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
 
     </application>
 

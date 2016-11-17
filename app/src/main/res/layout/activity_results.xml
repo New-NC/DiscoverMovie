@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:background="@drawable/background"
-    tools:context="newnc.github.io.discovermovie.view.Results">
+    tools:context="io.newnc.discovermovie.view.Results">
 
     <LinearLayout
         android:orientation="vertical"

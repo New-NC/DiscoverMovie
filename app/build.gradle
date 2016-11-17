@@ -4,7 +4,7 @@ android {
     compileSdkVersion 24
     buildToolsVersion "24.0.3"
     defaultConfig {
-        applicationId "newnc.github.io.discovermovie"
+        applicationId "io.newnc.discovermovie"
         minSdkVersion 15
         targetSdkVersion 24
         versionCode 1
@@ -28,5 +28,10 @@ dependencies {
         exclude group: 'com.android.support', module: 'support-annotations'
     })
     compile 'com.android.support:appcompat-v7:24.2.1'
+    compile 'com.facebook.android:facebook-android-sdk:4.+'
+    compile 'com.google.firebase:firebase-auth:9.8.0'
     testCompile 'junit:junit:4.12'
 }
+
+
+apply plugin: 'com.google.gms.google-services'

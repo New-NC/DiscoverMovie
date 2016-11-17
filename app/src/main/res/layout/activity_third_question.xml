@@ -8,7 +8,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:background="@drawable/background"
-    tools:context="newnc.github.io.discovermovie.view.ThirdQuestion">
+    tools:context="io.newnc.discovermovie.view.ThirdQuestion">
 
     <TextView
         android:layout_width="match_parent"

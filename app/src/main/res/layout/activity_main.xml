@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:background="@drawable/background"
-    tools:context="newnc.github.io.discovermovie.view.MainActivity">
+    tools:context="io.newnc.discovermovie.view.MainActivity">
 
     <TextView
         android:layout_width="fill_parent"
@@ -30,30 +30,30 @@
         android:layout_gravity="center"
         android:gravity="center">
 
-        <LinearLayout
-            android:orientation="horizontal"
+        <Button
+            android:id="@+id/button_startQuestionnaire"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="1">
-
-            <Button
-                android:id="@+id/button_startQuestionnaire"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="1"
-                android:textColor="@color/buttonText"
-                android:textSize="40sp"
-                android:text="@string/button_startQuestionnaire"
-                android:shadowColor="@color/shadow"
-                android:shadowDx="-2"
-                android:shadowDy="-2"
-                android:shadowRadius="15"
-                android:onClick="startQuestionnaire"
-                android:background="@color/backgroundButton"
-                android:layout_marginBottom="80dp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginRight="40dp"/>
-            </LinearLayout>
+            android:layout_weight="1"
+            android:textColor="@color/buttonText"
+            android:textSize="40sp"
+            android:text="@string/button_startQuestionnaire"
+            android:shadowColor="@color/shadow"
+            android:shadowDx="-2"
+            android:shadowDy="-2"
+            android:shadowRadius="15"
+            android:onClick="startQuestionnaire"
+            android:background="@color/backgroundButton"
+            android:layout_marginBottom="20px"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"/>
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/button_facebookLogin"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="80px"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp" />
     </LinearLayout>
 </LinearLayout>
 
