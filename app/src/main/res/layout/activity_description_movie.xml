@@ -20,7 +20,7 @@
         android:shadowDy="-2"
         android:shadowRadius="15"
         android:gravity="center"
-        android:id="@+id/textView"/>
+        android:id="@+id/movie_Title"/>
 
     <LinearLayout
         android:orientation="vertical"
@@ -44,9 +44,9 @@
                 android:layout_marginLeft="@dimen/activity_horizontal_margin"
                 android:layout_marginRight="@dimen/activity_horizontal_margin">
 
-                <ImageButton
+                <ImageView
                     android:contentDescription="@string/imageBestRated"
-                    android:id="@+id/bestRated"
+                    android:id="@+id/movie_cover"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/nemo"
@@ -59,7 +59,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:visibility="visible"
-                    android:id="@+id/bestRatedProgress" />
+                    android:id="@+id/movie_cover_progress" />
             </RelativeLayout>
 
             <Space
@@ -83,7 +83,7 @@
                     android:shadowDy="-2"
                     android:shadowRadius="15"
                     android:gravity="center"
-                    android:id="@+id/release_date"/>
+                    android:id="@+id/movie_release_date"/>
 
                 <TextView
                     android:layout_width="match_parent"
@@ -96,7 +96,30 @@
                     android:shadowDy="-2"
                     android:shadowRadius="15"
                     android:gravity="center"
-                    android:id="@+id/vote_avg"/>
+                    android:id="@+id/movie_vote_avg"/>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:layout_marginBottom="25dp">
+
+                    <com.facebook.share.widget.SendButton
+                        android:id="@+id/send_movie_button"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/com_facebook_messenger_blue"/>
+
+                    <android.support.v4.widget.Space
+                        android:layout_width="10dp"
+                        android:layout_height="match_parent" />
+
+                    <com.facebook.share.widget.ShareButton
+                        android:id="@+id/share_movie_button"
+                        android:layout_height="wrap_content"
+                        android:layout_width="wrap_content"
+                        android:background="@color/com_facebook_blue"/>
+                </LinearLayout>
 
             </RelativeLayout>
 
@@ -151,22 +174,6 @@
                 android:layout_marginStart="40dp"
                 android:layout_marginRight="40dp"
                 android:layout_marginEnd="40dp"/>
-
-            <Button
-                android:id="@+id/nextQuestion"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/white"
-                android:textSize="40sp"
-                android:text="@string/buttonNextQuestion"
-                android:background="@color/red"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="8dp"
-                android:layout_marginLeft="40dp"
-                android:layout_marginStart="40dp"
-                android:layout_marginRight="40dp"
-                android:layout_marginEnd="40dp"/>
-
 
         </RelativeLayout>
 

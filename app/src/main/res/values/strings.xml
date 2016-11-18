@@ -19,4 +19,7 @@
     <string name="overview">A tale which follows the comedic and eventful journeys of two fish, the fretful Marlin and his young son Nemo, who are separated from each other in the Great Barrier Reef when Nemo is unexpectedly taken from his home and thrust into a fish tank in a dentist\'s office overlooking Sydney Harbor. Buoyed by the companionship of a friendly but forgetful fish named Dory, the overly cautious Marlin embarks on a dangerous trek and finds himself the unlikely hero of an epic journey to rescue his son.</string>
     <string name="results">Results</string>>
     <string name="facebook_app_id">972480406190271</string>
+    <string name="success_share_message">Content shared with success.</string>
+    <string name="cancel_share_message">Content share canceled.</string>
+    <string name="error_share_message">Error on sharing content.</string>
 </resources>

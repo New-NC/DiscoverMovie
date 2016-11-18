@@ -75,7 +75,6 @@ public class MainActivity extends AppCompatActivity implements TaskCallback {
             @Override
             public void onError(FacebookException error) {
                 error("facebook:onError", error);
-
             }
         });
     }
