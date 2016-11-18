@@ -29,7 +29,6 @@ public class MovieDescription extends AppCompatActivity implements TaskCallback 
     private SendButton sendButton;
     private ShareButton shareButton;
 
-    private CallbackManager callbackManager;
     private SharePhotoContent content;
 
     @Override
@@ -59,6 +58,8 @@ public class MovieDescription extends AppCompatActivity implements TaskCallback 
     }
 
     private void prepareSendMessenger() {
+        CallbackManager callbackManager = CallbackManager.Factory.create();
+
         sendButton = (SendButton) findViewById(R.id.send_movie_button);
         sendButton.setShareContent(content);
         sendButton.registerCallback(callbackManager, new FacebookCallback<Sharer.Result>() {
