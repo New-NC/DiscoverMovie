@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <integer name="newest">0</integer>
+    <integer name="bestRated">1</integer>
+
+    <integer name="adventure">0</integer>
+    <integer name="animal">1</integer>
+    <integer name="princess">2</integer>
+    <integer name="tech">3</integer>
+
+    <integer name="disney">2</integer>
+    <integer name="pixar">3</integer>
+    <integer name="dreamworks">521</integer>
+    <integer name="ghibili">10342</integer>
+</resources>

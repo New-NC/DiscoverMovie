@@ -29,6 +29,7 @@ public class AppController {
 
     private int cover;
     private int categories;
+    private int company;
 
     /**
      * A object implementing the TaskCallback interface, just a try to simulate callback in JS.
@@ -123,6 +124,8 @@ public class AppController {
     public void setCategorie(int categories) {
         this.categories = categories;
     }
+
+    public void setCompany(int company) { this.company = company; }
 
     /**
      * Loads categories by pass our API.

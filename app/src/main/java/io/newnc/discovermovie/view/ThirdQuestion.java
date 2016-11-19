@@ -51,7 +51,7 @@ public class ThirdQuestion extends AppCompatActivity implements View.OnClickList
             disableHighlightButton(imageButtonDreamworks);
             disableHighlightButton(imageButtonGhibili);
 
-            AppController.getInstance().setCategorie(0);
+            AppController.getInstance().setCompany(R.integer.disney);
 
             return;
         }
@@ -65,7 +65,7 @@ public class ThirdQuestion extends AppCompatActivity implements View.OnClickList
             disableHighlightButton(imageButtonDreamworks);
             disableHighlightButton(imageButtonDisney);
 
-            AppController.getInstance().setCategorie(1);
+            AppController.getInstance().setCompany(R.integer.pixar);
 
             return;
         }
@@ -79,7 +79,7 @@ public class ThirdQuestion extends AppCompatActivity implements View.OnClickList
             disableHighlightButton(imageButtonGhibili);
             disableHighlightButton(imageButtonPixar);
 
-            AppController.getInstance().setCategorie(2);
+            AppController.getInstance().setCompany(R.integer.dreamworks);
 
             return;
         }
@@ -93,7 +93,7 @@ public class ThirdQuestion extends AppCompatActivity implements View.OnClickList
             disableHighlightButton(imageButtonDisney);
             disableHighlightButton(imageButtonDreamworks);
 
-            AppController.getInstance().setCategorie(3);
+            AppController.getInstance().setCompany(R.integer.ghibili);
 
             return;
         }

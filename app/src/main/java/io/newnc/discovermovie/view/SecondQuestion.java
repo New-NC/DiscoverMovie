@@ -48,7 +48,7 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
             disableHighlightButton(imageButtonPrincess);
             disableHighlightButton(imageButtonTech);
 
-            AppController.getInstance().setCategorie(0);
+            AppController.getInstance().setCategorie(R.integer.adventure);
 
             return;
         }
@@ -62,7 +62,7 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
             disableHighlightButton(imageButtonPrincess);
             disableHighlightButton(imageButtonTech);
 
-            AppController.getInstance().setCategorie(1);
+            AppController.getInstance().setCategorie(R.integer.animal);
 
             return;
         }
@@ -76,7 +76,7 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
             disableHighlightButton(imageButtonAnimal);
             disableHighlightButton(imageButtonTech);
 
-            AppController.getInstance().setCategorie(2);
+            AppController.getInstance().setCategorie(R.integer.princess);
 
             return;
         }
@@ -90,7 +90,7 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
             disableHighlightButton(imageButtonAnimal);
             disableHighlightButton(imageButtonPrincess);
 
-            AppController.getInstance().setCategorie(3);
+            AppController.getInstance().setCategorie(R.integer.tech);
 
             return;
         }

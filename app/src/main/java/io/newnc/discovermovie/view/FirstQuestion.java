@@ -93,9 +93,9 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
         imageButtonClicked.setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
 
         if (buttonNemo(imageButtonClicked))
-            AppController.getInstance().setCover(1);
+            AppController.getInstance().setCover(R.integer.bestRated);
         else if (buttonPets(imageButtonClicked))
-            AppController.getInstance().setCover(0);
+            AppController.getInstance().setCover(R.integer.newest);
     }
 
     //function to disable the highlight when another button is clicked
