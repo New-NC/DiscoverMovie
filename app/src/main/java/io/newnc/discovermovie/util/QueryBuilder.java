@@ -129,5 +129,5 @@ public class QueryBuilder {
 
     public static final String LANURL = "http://192.168.1.38:8080/";
     public static final String HEROKUURL = "https://infinite-brushlands-81913.herokuapp.com";
-    public static final String URL = LANURL;
+    public static final String URL = HEROKUURL;
 }

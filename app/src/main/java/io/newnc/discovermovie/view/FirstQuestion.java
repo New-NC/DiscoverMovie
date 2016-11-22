@@ -71,9 +71,7 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
     /* AUXILIARY FUNCTIONS */
 
     //check if the button Nemo was clicked
-    public boolean buttonNemo(View v) {
-        return (v.getId() == R.id.bestRated);
-    }
+    public boolean buttonNemo(View v) { return (v.getId() == R.id.bestRated); }
 
     //check if the button Pets was clicked
     public boolean buttonPets(View v) {
@@ -93,9 +91,9 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
         imageButtonClicked.setColorFilter(0x77000000, PorterDuff.Mode.SRC_ATOP);
 
         if (buttonNemo(imageButtonClicked))
-            AppController.getInstance().setCover(R.integer.bestRated);
+            AppController.getInstance().setCover(1);
         else if (buttonPets(imageButtonClicked))
-            AppController.getInstance().setCover(R.integer.newest);
+            AppController.getInstance().setCover(0);
     }
 
     //function to disable the highlight when another button is clicked
