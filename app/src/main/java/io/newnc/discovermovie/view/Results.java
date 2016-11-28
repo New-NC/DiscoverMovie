@@ -7,6 +7,8 @@ import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
 
+import com.squareup.picasso.Picasso;
+
 import io.newnc.discovermovie.R;
 import io.newnc.discovermovie.controller.AppController;
 import io.newnc.discovermovie.task.DownloadImageTask;
@@ -14,15 +16,20 @@ import io.newnc.discovermovie.task.TaskCallback;
 
 public class Results extends AppCompatActivity implements View.OnClickListener, TaskCallback {
 
-    Button      buttonReturnHome;
+    Button buttonReturnHome;
+
     ImageButton imageButton1;
     ProgressBar progressBar1;
+
     ImageButton imageButton2;
     ProgressBar progressBar2;
+
     ImageButton imageButton3;
     ProgressBar progressBar3;
+
     ImageButton imageButton4;
     ProgressBar progressBar4;
+
     ImageButton imageButton5;
     ProgressBar progressBar5;
 
@@ -54,10 +61,7 @@ public class Results extends AppCompatActivity implements View.OnClickListener, 
 
     /* AUXILIARY FUNCTIONS */
     public boolean buttonReturnHome(View v){
-        if (v.getId() == R.id.returnHome){
-            return true;
-        } else
-            return false;
+        return (v.getId() == R.id.returnHome);
     }
 
     private void setClickListener() {
@@ -67,11 +71,11 @@ public class Results extends AppCompatActivity implements View.OnClickListener, 
 
     @Override
     public void doSomething(Object o) {
-        new DownloadImageTask(imageButton1, progressBar1).execute(((String[]) o)[0]);
-        new DownloadImageTask(imageButton2, progressBar2).execute(((String[]) o)[1]);
-        new DownloadImageTask(imageButton3, progressBar3).execute(((String[]) o)[2]);
-        new DownloadImageTask(imageButton4, progressBar4).execute(((String[]) o)[3]);
-        new DownloadImageTask(imageButton5, progressBar5).execute(((String[]) o)[4]);
+        new DownloadImageTask(this, imageButton1, progressBar1).execute(((String[]) o)[0]);
+        new DownloadImageTask(this, imageButton2, progressBar2).execute(((String[]) o)[1]);
+        new DownloadImageTask(this, imageButton3, progressBar3).execute(((String[]) o)[2]);
+        new DownloadImageTask(this, imageButton4, progressBar4).execute(((String[]) o)[3]);
+        new DownloadImageTask(this, imageButton5, progressBar5).execute(((String[]) o)[4]);
     }
-}
 
+}

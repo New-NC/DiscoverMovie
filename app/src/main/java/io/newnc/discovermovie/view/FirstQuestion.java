@@ -1,5 +1,6 @@
 package io.newnc.discovermovie.view;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.PorterDuff;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ProgressBar;
+
+import com.squareup.picasso.Picasso;
 
 import io.newnc.discovermovie.R;
 import io.newnc.discovermovie.controller.AppController;
@@ -117,8 +120,8 @@ public class FirstQuestion extends AppCompatActivity implements View.OnClickList
 
     @Override
     public void doSomething(Object o) {
-        new DownloadImageTask(imageButtonNewest, progressBarNewest).execute(((String[]) o)[0]);
-        new DownloadImageTask(imageButtonTopRated, progressBarTopRated).execute(((String[]) o)[1]);
+        new DownloadImageTask(this, imageButtonNewest, progressBarNewest).execute(((String[] ) o)[0]);
+        new DownloadImageTask(this, imageButtonTopRated, progressBarTopRated).execute(((String[] ) o)[1]);
     }
 
 }

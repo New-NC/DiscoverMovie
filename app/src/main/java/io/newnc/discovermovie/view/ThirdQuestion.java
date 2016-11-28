@@ -176,16 +176,16 @@ public class ThirdQuestion extends AppCompatActivity implements View.OnClickList
     @Override
     public void doSomething(Object o) {
         if (((String[]) o)[0] != null)
-            new DownloadImageTask(imageButtonDisney, progressBarDisney).execute(((String[]) o)[0]);
+            new DownloadImageTask(this, imageButtonDisney, progressBarDisney).execute(((String[]) o)[0]);
 
         if (((String[]) o)[1] != null)
-            new DownloadImageTask(imageButtonPixar, progressBarPixar).execute(((String[]) o)[1]);
+            new DownloadImageTask(this, imageButtonPixar, progressBarPixar).execute(((String[]) o)[1]);
 
         if (((String[]) o)[2] != null)
-            new DownloadImageTask(imageButtonDreamworks, progressBarDreamworks).execute(((String[]) o)[2]);
+            new DownloadImageTask(this, imageButtonDreamworks, progressBarDreamworks).execute(((String[]) o)[2]);
 
         if (((String[]) o)[3] != null)
-            new DownloadImageTask(imageButtonGhibili, progressBarGhibili).execute(((String[]) o)[3]);
+            new DownloadImageTask(this, imageButtonGhibili, progressBarGhibili).execute(((String[]) o)[3]);
 
     }
 }

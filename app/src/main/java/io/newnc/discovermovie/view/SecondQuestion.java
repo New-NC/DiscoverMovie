@@ -173,16 +173,16 @@ public class    SecondQuestion extends AppCompatActivity implements View.OnClick
     @Override
     public void doSomething(Object o) {
         if (((String[]) o)[0] != null)
-            new DownloadImageTask(imageButtonAdventure, progressBarAdventure).execute(((String[]) o)[0]);
+            new DownloadImageTask(this, imageButtonAdventure, progressBarAdventure).execute(((String[]) o)[0]);
 
         if (((String[]) o)[1] != null)
-            new DownloadImageTask(imageButtonAnimal, progressBarAnimal).execute(((String[]) o)[1]);
+            new DownloadImageTask(this, imageButtonAnimal, progressBarAnimal).execute(((String[]) o)[1]);
 
         if (((String[]) o)[2] != null)
-            new DownloadImageTask(imageButtonPrincess, progressBarPrincess).execute(((String[]) o)[2]);
+            new DownloadImageTask(this, imageButtonPrincess, progressBarPrincess).execute(((String[]) o)[2]);
 
         if (((String[]) o)[3] != null)
-            new DownloadImageTask(imageButtonTech, progressBarTech).execute(((String[]) o)[3]);
+            new DownloadImageTask(this, imageButtonTech, progressBarTech).execute(((String[]) o)[3]);
         
     }
 }
