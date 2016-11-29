@@ -34,7 +34,7 @@
                 android:id="@+id/result1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/pets"
+                android:background="@color/invisible"
                 android:scaleType="fitXY"
                 android:visibility="invisible" />
 
@@ -58,7 +58,7 @@
                 android:id="@+id/result2"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/nemo"
+                android:background="@color/invisible"
                 android:scaleType="fitXY"
                 android:visibility="invisible" />
 
@@ -82,7 +82,7 @@
                 android:id="@+id/result3"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/pets"
+                android:background="@color/invisible"
                 android:scaleType="fitXY"
                 android:visibility="invisible" />
 
@@ -106,7 +106,7 @@
                 android:id="@+id/result4"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/nemo"
+                android:background="@color/invisible"
                 android:scaleType="fitXY"
                 android:visibility="invisible" />
 
@@ -130,7 +130,7 @@
                 android:id="@+id/result5"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@drawable/pets"
+                android:background="@color/invisible"
                 android:scaleType="fitXY"
                 android:visibility="invisible" />
 

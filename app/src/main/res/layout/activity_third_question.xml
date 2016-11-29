@@ -48,7 +48,7 @@
                     android:id="@+id/disney"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/pets"
+                    android:background="@color/invisible"
                     android:scaleType="fitXY"
                     android:visibility="invisible" />
 
@@ -75,7 +75,7 @@
                     android:id="@+id/pixar"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/nemo"
+                    android:background="@color/invisible"
                     android:scaleType="fitXY"
                     android:visibility="invisible" />
 
@@ -117,7 +117,7 @@
                     android:id="@+id/dreamworks"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/nemo"
+                    android:background="@color/invisible"
                     android:scaleType="fitXY"
                     android:visibility="invisible" />
 
@@ -144,7 +144,7 @@
                     android:id="@+id/ghibili"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/pets"
+                    android:background="@color/invisible"
                     android:scaleType="fitXY"
                     android:visibility="invisible" />
 

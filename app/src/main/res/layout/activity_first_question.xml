@@ -85,7 +85,7 @@
                     android:id="@+id/bestRated"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/nemo"
+                    android:background="@color/invisible"
                     android:scaleType="fitXY"
                     android:adjustViewBounds="true"
                     android:visibility="invisible"/>
@@ -113,7 +113,7 @@
                     android:id="@+id/newest"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:background="@drawable/pets"
+                    android:background="@color/invisible"
                     android:scaleType="fitXY"
                     android:adjustViewBounds="true"
                     android:visibility="invisible"/>
