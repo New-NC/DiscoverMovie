@@ -22,4 +22,5 @@
     <string name="success_share_message">Content shared with success.</string>
     <string name="cancel_share_message">Content share canceled.</string>
     <string name="error_share_message">Error on sharing content.</string>
+    <string name="returnResults">BACK</string>
 </resources>

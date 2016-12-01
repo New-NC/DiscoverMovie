@@ -13,6 +13,7 @@ import io.newnc.discovermovie.model.Movie;
 import io.newnc.discovermovie.task.GetCategoriesTask;
 import io.newnc.discovermovie.task.GetCompaniesTask;
 import io.newnc.discovermovie.task.GetCoversTask;
+import io.newnc.discovermovie.task.GetMovieDescriptionTask;
 import io.newnc.discovermovie.task.GetMoviesTask;
 import io.newnc.discovermovie.task.GetResultTask;
 import io.newnc.discovermovie.task.TaskCallback;
@@ -30,6 +31,7 @@ public class AppController {
     private int cover;
     private int categories;
     private int company;
+    private String movieId;
 
     /**
      * A object implementing the TaskCallback interface, just a try to simulate callback in JS.
@@ -218,8 +220,8 @@ public class AppController {
         log("BEGIN loadResultFrom");
 
         try {
-            String[] coversPath = new String[5];
-            for (int i = 0; i < 5; i++)
+            String[] coversPath = new String[10];
+            for (int i = 0; i < 10; i++)
                 coversPath[i] = callback.getString(i);
             callbackObject.doSomething(coversPath);
         }catch (JSONException e) {
@@ -227,6 +229,40 @@ public class AppController {
         }
 
         log("END loadResultFrom");
+    }
+
+    public void loadDescription(TaskCallback callback) {
+        log("BEGIN loadDescription");
+
+        callbackObject = callback;
+        GetMovieDescriptionTask task = new GetMovieDescriptionTask();
+        task.execute(movieId);
+
+        log("END loadDescription");
+    }
+
+    public void loadMovieDescriptionFrom(JSONObject callback) {
+        log("BEGIN loadResultFrom");
+
+        try {
+            Movie movie = new Movie();
+
+            movie.setTitle(callback.getString("title"));
+            movie.setOverview(callback.getString("overview"));
+            movie.setCover_path(callback.getString("poster_path"));
+            movie.setRelease_date(callback.getString("release_date"));
+            movie.setVote_average(callback.getString("vote_average"));
+
+            callbackObject.doSomething(movie);
+        }catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+        log("END loadResultFrom");
+    }
+
+    public void setMovieId(String movieId) {
+        this.movieId = movieId;
     }
 
     /**

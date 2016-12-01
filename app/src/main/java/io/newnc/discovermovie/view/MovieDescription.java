@@ -7,7 +7,10 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.CallbackManager;
@@ -20,47 +23,81 @@ import com.facebook.share.model.SharePhotoContent;
 import com.facebook.share.widget.SendButton;
 import com.facebook.share.widget.ShareButton;
 
+import java.util.stream.IntStream;
+
 import io.newnc.discovermovie.R;
+import io.newnc.discovermovie.controller.AppController;
+import io.newnc.discovermovie.model.Movie;
+import io.newnc.discovermovie.task.DownloadImageTask;
 import io.newnc.discovermovie.task.TaskCallback;
 
-public class MovieDescription extends AppCompatActivity implements TaskCallback {
+public class MovieDescription extends AppCompatActivity implements View.OnClickListener, TaskCallback {
 
-    private ImageView coverMovie;
     private SendButton sendButton;
     private ShareButton shareButton;
 
-    private SharePhotoContent content;
+    private SharePhotoContent content = null;
+
+    private TextView titleText;
+    private ImageView coverImage;
+    private ProgressBar progressBar;
+    private TextView releaseDateText;
+    private TextView voteAverageText;
+    private TextView overviewText;
+
+    private Button backButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_description_movie);
 
-        coverMovie = (ImageView) findViewById(R.id.movie_cover);
+        titleText = (TextView) findViewById(R.id.movie_Title);
+        coverImage = (ImageView) findViewById(R.id.movie_cover);
+        progressBar = (ProgressBar) findViewById(R.id.movie_cover_progress);
+        releaseDateText = (TextView) findViewById(R.id.movie_release_date);
+        voteAverageText = (TextView) findViewById(R.id.movie_vote_avg);
+        overviewText = (TextView) findViewById(R.id.overview);
 
+        sendButton = (SendButton) findViewById(R.id.send_movie_button);
+        shareButton = (ShareButton) findViewById(R.id.share_movie_button);
+        backButton = (Button) findViewById(R.id.returnResults);
+
+        setClickListener();
+
+        AppController.getInstance().loadDescription(this);
+
+        /*
         prepareContent();
         prepareSendMessenger();
         prepareShareTimeline();
+        */
     }
 
-    private void prepareContent() {
-        Bitmap bitmap = ((BitmapDrawable) coverMovie.getDrawable()).getBitmap();
-        SharePhoto photo = new SharePhoto.Builder().setBitmap(bitmap).build();
-        content = new SharePhotoContent.Builder()
-                .addPhoto(photo)
-                .setShareHashtag(new ShareHashtag.Builder().setHashtag("#DiscoverMovieApp").build())
-                .build();
+    private void setClickListener() {
+        backButton.setOnClickListener(this);
+        sendButton.setOnClickListener(this);
+        shareButton.setOnClickListener(this);
+    }
+
+    public void prepareContent() {
+        if (content == null) {
+            Bitmap bitmap = ((BitmapDrawable) coverImage.getDrawable()).getBitmap();
+            SharePhoto photo = new SharePhoto.Builder().setBitmap(bitmap).build();
+            content = new SharePhotoContent.Builder()
+                    .addPhoto(photo)
+                    .setShareHashtag(new ShareHashtag.Builder().setHashtag("#DiscoverMovieApp").build())
+                    .build();
+        }
     }
 
     private void prepareShareTimeline() {
-        shareButton = (ShareButton) findViewById(R.id.share_movie_button);
         shareButton.setShareContent(content);
     }
 
     private void prepareSendMessenger() {
         CallbackManager callbackManager = CallbackManager.Factory.create();
 
-        sendButton = (SendButton) findViewById(R.id.send_movie_button);
         sendButton.setShareContent(content);
         sendButton.registerCallback(callbackManager, new FacebookCallback<Sharer.Result>() {
             @Override
@@ -93,7 +130,13 @@ public class MovieDescription extends AppCompatActivity implements TaskCallback 
 
     @Override
     public void doSomething(Object o) {
-        log("Something happens");
+        Movie movie = (Movie) o;
+
+        titleText.setText(movie.getTitle());
+        new DownloadImageTask(this, coverImage, progressBar).execute(movie.getCover_path());
+        releaseDateText.setText("Release Date: " + movie.getRelease_date());
+        voteAverageText.setText("Vote Average: " + movie.getVote_average());
+        overviewText.setText(movie.getOverview());
     }
 
     private static final String CATEG = "MovieDescription";
@@ -101,6 +144,19 @@ public class MovieDescription extends AppCompatActivity implements TaskCallback 
         Log.v(CATEG, message);
     }
     private void error(String message, Exception exception) { Log.v(CATEG, message, exception); }
+
+    @Override
+    public void onClick(View v) {
+        if (buttonReturnResults(v))
+            finish();
+    }
+
+    /* AUXILIARY FUNCTIONS */
+    public boolean buttonReturnResults(View v){
+        return (v.getId() == R.id.returnResults);
+    }
+    public boolean buttonShare(View v) { return (v.getId() == R.id.share_movie_button); }
+    public boolean buttonSend(View v) { return (v.getId() == R.id.send_movie_button); }
 }
 
 

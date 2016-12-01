@@ -12,6 +12,7 @@ import android.widget.ProgressBar;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.RequestCreator;
 
+import io.newnc.discovermovie.view.MovieDescription;
 import io.newnc.discovermovie.view.Results;
 
 /**
@@ -28,7 +29,7 @@ public class DownloadImageTask extends AsyncTask<String, Void, RequestCreator> {
     /**
      * Class constructor.
      */
-    public DownloadImageTask(Context c, ImageButton i, ProgressBar p){
+    public DownloadImageTask(Context c, ImageView i, ProgressBar p){
         this.context = c;
         this.image = i;
         this.progressBar = p;
@@ -81,6 +82,11 @@ public class DownloadImageTask extends AsyncTask<String, Void, RequestCreator> {
         a.into(image);
         image.setVisibility(View.VISIBLE);
         progressBar.setVisibility(View.INVISIBLE);
+
+        if (context instanceof MovieDescription) {
+            MovieDescription movieDescription = (MovieDescription) context;
+            movieDescription.prepareContent();
+        }
 
         log("END onPostExecute");
     }

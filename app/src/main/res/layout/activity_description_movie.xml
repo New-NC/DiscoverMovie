@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="@drawable/background2"
     tools:context="io.newnc.discovermovie.view.MovieDescription">
 
     <TextView
@@ -160,12 +160,12 @@
             android:gravity="center">
 
             <Button
-                android:id="@+id/returnHome"
+                android:id="@+id/returnResults"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
                 android:textSize="40sp"
-                android:text="@string/returnHome"
+                android:text="@string/returnResults"
                 android:shadowColor="@color/black"
                 android:background="@color/red"
                 android:layout_marginTop="20dp"

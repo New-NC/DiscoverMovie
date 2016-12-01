@@ -21,6 +21,7 @@
         <activity android:name=".view.SecondQuestion"></activity>
         <activity android:name=".view.ThirdQuestion"></activity>
         <activity android:name=".view.Results"></activity>
+        <activity android:name=".view.MovieDescription"></activity>
 
         <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="@string/facebook_app_id"/>
         
