@@ -57,6 +57,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:visibility="visible"
+                    android:elevation="10dp"
                     android:id="@+id/disneyProgress" />
 
             </RelativeLayout>
@@ -84,6 +85,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:visibility="visible"
+                    android:elevation="10dp"
                     android:id="@+id/pixarProgress" />
 
             </RelativeLayout>
@@ -126,6 +128,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:visibility="visible"
+                    android:elevation="10dp"
                     android:id="@+id/dreamworksProgress" />
 
             </RelativeLayout>
@@ -153,6 +156,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:visibility="visible"
+                    android:elevation="10dp"
                     android:id="@+id/ghibiliProgress" />
 
             </RelativeLayout>

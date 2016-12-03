@@ -59,6 +59,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:visibility="visible"
+                    android:elevation="10dp"
                     android:id="@+id/movie_cover_progress" />
             </RelativeLayout>
 

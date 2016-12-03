@@ -95,6 +95,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:visibility="visible"
+                    android:elevation="10dp"
                     android:id="@+id/bestRatedProgress" />
             </RelativeLayout>
 
@@ -123,6 +124,7 @@
                     android:layout_height="wrap_content"
                     android:layout_centerInParent="true"
                     android:visibility="visible"
+                    android:elevation="10dp"
                     android:id="@+id/newestProgress" />
             </RelativeLayout>
 
