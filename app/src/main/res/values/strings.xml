@@ -23,4 +23,6 @@
     <string name="cancel_share_message">Content share canceled.</string>
     <string name="error_share_message">Error on sharing content.</string>
     <string name="returnResults">BACK</string>
+    <string name="open">Open</string>
+    <string name="close">Close</string>
 </resources>
