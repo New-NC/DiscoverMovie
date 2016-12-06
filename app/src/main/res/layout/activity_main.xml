@@ -14,6 +14,10 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" >
 
+        <include layout="@layout/navigation_action"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+
         <com.facebook.login.widget.LoginButton
             android:id="@+id/button_facebookLogin"
             android:layout_width="match_parent"
