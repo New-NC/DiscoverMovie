@@ -3,9 +3,16 @@ package io.newnc.discovermovie.view;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
+import android.net.Uri;
 import android.os.Bundle;
+import android.os.Environment;
+import android.support.v4.view.MenuItemCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.ShareActionProvider;
+import android.support.v7.widget.Toolbar;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
@@ -16,14 +23,17 @@ import android.widget.Toast;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
+import com.facebook.FacebookSdk;
 import com.facebook.share.Sharer;
 import com.facebook.share.model.ShareHashtag;
+import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.model.SharePhoto;
 import com.facebook.share.model.SharePhotoContent;
 import com.facebook.share.widget.SendButton;
 import com.facebook.share.widget.ShareButton;
+import com.facebook.share.widget.ShareDialog;
 
-import java.util.stream.IntStream;
+import java.io.File;
 
 import io.newnc.discovermovie.R;
 import io.newnc.discovermovie.controller.AppController;
@@ -33,10 +43,7 @@ import io.newnc.discovermovie.task.TaskCallback;
 
 public class MovieDescription extends AppCompatActivity implements View.OnClickListener, TaskCallback {
 
-    private SendButton sendButton;
-    private ShareButton shareButton;
-
-    private SharePhotoContent content = null;
+    private ShareActionProvider shareActionProvider;
 
     private TextView titleText;
     private ImageView coverImage;
@@ -47,10 +54,17 @@ public class MovieDescription extends AppCompatActivity implements View.OnClickL
 
     private Button backButton;
 
+    private Toolbar mToolbar;
+
+    private String coverPath;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_description_movie);
+
+        mToolbar = (Toolbar) findViewById(R.id.nav_action);
+        setSupportActionBar(mToolbar);
 
         titleText = (TextView) findViewById(R.id.movie_Title);
         coverImage = (ImageView) findViewById(R.id.movie_cover);
@@ -59,68 +73,58 @@ public class MovieDescription extends AppCompatActivity implements View.OnClickL
         voteAverageText = (TextView) findViewById(R.id.movie_vote_avg);
         overviewText = (TextView) findViewById(R.id.overview);
 
-        sendButton = (SendButton) findViewById(R.id.send_movie_button);
-        shareButton = (ShareButton) findViewById(R.id.share_movie_button);
         backButton = (Button) findViewById(R.id.returnResults);
 
         setClickListener();
 
         AppController.getInstance().loadDescription(this);
+    }
 
-        /*
-        prepareContent();
-        prepareSendMessenger();
-        prepareShareTimeline();
-        */
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.description_movie_menu, menu);
+
+        MenuItem item = menu.findItem(R.id.share);
+
+        shareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(item);
+
+        shareActionProvider.setOnShareTargetSelectedListener(new ShareActionProvider.OnShareTargetSelectedListener() {
+            @Override
+            public boolean onShareTargetSelected(ShareActionProvider source, Intent intent) {
+                return false;
+            }
+        });
+
+        return true;
+    }
+
+    private void setShareIntent() {
+        Intent sharingIntent = new Intent(Intent.ACTION_SEND);
+        sharingIntent.setType("image/*");
+        String shareBodyText = "Hey, I'm watching " + titleText.getText() + "!";
+        sharingIntent.putExtra(Intent.EXTRA_SUBJECT, titleText.getText());
+        sharingIntent.putExtra(Intent.EXTRA_TEXT, shareBodyText);
+        File coverFile = new File(Environment.getDownloadCacheDirectory().getPath(), "cover.jpg");
+        sharingIntent.putExtra(Intent.EXTRA_STREAM, Uri.fromFile(coverFile));
+
+        if (shareActionProvider != null)
+            shareActionProvider.setShareIntent(sharingIntent);
+
+        ShareDialog shareDialog;
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        shareDialog = new ShareDialog(this);
+
+        ShareLinkContent shareLinkContent = new ShareLinkContent.Builder()
+                .setContentTitle("title")
+                .setContentDescription(shareBodyText)
+                .setContentUrl(Uri.parse(coverPath))
+                .build();
+
+        shareDialog.show(shareLinkContent);
     }
 
     private void setClickListener() {
         backButton.setOnClickListener(this);
-        sendButton.setOnClickListener(this);
-        shareButton.setOnClickListener(this);
-    }
-
-    public void prepareContent() {
-        if (content == null) {
-            Bitmap bitmap = ((BitmapDrawable) coverImage.getDrawable()).getBitmap();
-            SharePhoto photo = new SharePhoto.Builder().setBitmap(bitmap).build();
-            content = new SharePhotoContent.Builder()
-                    .addPhoto(photo)
-                    .setShareHashtag(new ShareHashtag.Builder().setHashtag("#DiscoverMovieApp").build())
-                    .build();
-        }
-    }
-
-    private void prepareShareTimeline() {
-        shareButton.setShareContent(content);
-    }
-
-    private void prepareSendMessenger() {
-        CallbackManager callbackManager = CallbackManager.Factory.create();
-
-        sendButton.setShareContent(content);
-        sendButton.registerCallback(callbackManager, new FacebookCallback<Sharer.Result>() {
-            @Override
-            public void onSuccess(Sharer.Result result) {
-                log("facebook:onSuccess" + result);
-
-                Toast.makeText(MovieDescription.this, R.string.success_share_message, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onCancel() {
-                log("facebook:onCancel");
-
-                Toast.makeText(MovieDescription.this, R.string.cancel_share_message, Toast.LENGTH_SHORT).show();
-            }
-
-            @Override
-            public void onError(FacebookException error) {
-                error("facebook:onError", error);
-
-                Toast.makeText(MovieDescription.this, R.string.error_share_message, Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     public void startQuestionnaire(View view) {
@@ -133,10 +137,12 @@ public class MovieDescription extends AppCompatActivity implements View.OnClickL
         Movie movie = (Movie) o;
 
         titleText.setText(movie.getTitle());
-        new DownloadImageTask(this, coverImage, progressBar).execute(movie.getCover_path());
+        new DownloadImageTask(this, coverImage, progressBar).execute(coverPath = movie.getCover_path());
         releaseDateText.setText("Release Date: " + movie.getRelease_date());
         voteAverageText.setText("Vote Average: " + movie.getVote_average());
         overviewText.setText(movie.getOverview());
+
+        setShareIntent();
     }
 
     private static final String CATEG = "MovieDescription";
@@ -155,8 +161,6 @@ public class MovieDescription extends AppCompatActivity implements View.OnClickL
     public boolean buttonReturnResults(View v){
         return (v.getId() == R.id.returnResults);
     }
-    public boolean buttonShare(View v) { return (v.getId() == R.id.share_movie_button); }
-    public boolean buttonSend(View v) { return (v.getId() == R.id.send_movie_button); }
 }
 
 

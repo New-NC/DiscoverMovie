@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:bwq="http://schemas.android.com/apk/res-auto" >
+<item android:id="@+id/share"
+    bwq:showAsAction="always"
+    android:icon="@android:drawable/ic_menu_share"
+    android:title="Share"
+    bwq:actionProviderClass="android.support.v7.widget.ShareActionProvider"></item>
+</menu>

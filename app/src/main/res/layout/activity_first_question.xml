@@ -8,6 +8,10 @@
     android:background="@drawable/background2"
     tools:context="io.newnc.discovermovie.view.FirstQuestion">
 
+    <include layout="@layout/navigation_action"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"

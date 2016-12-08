@@ -9,9 +9,18 @@
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:paddingRight="@dimen/activity_horizontal_margin"
-        android:paddingLeft="@dimen/activity_horizontal_margin">
+        android:layout_height="0dp">
+
+        <include layout="@layout/navigation_action"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent" />
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin">
 
         <TextView
             android:layout_width="match_parent"
@@ -161,5 +170,5 @@
             android:layout_marginRight="40dp"/>
 
     </LinearLayout>
-
+    </LinearLayout>
 </ScrollView>

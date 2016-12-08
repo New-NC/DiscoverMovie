@@ -3,6 +3,7 @@ package io.newnc.discovermovie.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
@@ -35,12 +36,17 @@ public class Results extends AppCompatActivity implements View.OnClickListener, 
     ImageButton imageButton5;
     ProgressBar progressBar5;
 
+    Toolbar mToolbar;
+
     String[] moviesIds = new String[5];
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_results);
+
+        mToolbar = (Toolbar) findViewById(R.id.nav_action);
+        setSupportActionBar(mToolbar);
 
         imageButton1 = (ImageButton) findViewById(R.id.result1);
         progressBar1 = (ProgressBar) findViewById(R.id.result1Progress);

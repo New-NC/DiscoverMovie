@@ -10,6 +10,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Toast;
 
@@ -36,7 +37,6 @@ public class MainActivity extends AppCompatActivity implements TaskCallback {
 
     // Facebook
     private CallbackManager callbackManager;
-    private LoginButton loginButton;
 
     // Firebase
     private FirebaseAuth mAuth;
@@ -56,6 +56,9 @@ public class MainActivity extends AppCompatActivity implements TaskCallback {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_main);
+
+
+
         AppEventsLogger.activateApp(this);
 
         mToolbar = (Toolbar) findViewById(R.id.nav_action);
@@ -86,24 +89,6 @@ public class MainActivity extends AppCompatActivity implements TaskCallback {
         };
 
         callbackManager = CallbackManager.Factory.create();
-        loginButton = (LoginButton) findViewById(R.id.button_facebookLogin);
-        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
-            @Override
-            public void onSuccess(LoginResult loginResult) {
-                log("facebook:onSuccess" + loginResult);
-                handleFacebookAccessToken(loginResult.getAccessToken());
-            }
-
-            @Override
-            public void onCancel() {
-                log("facebook:onCancel");
-            }
-
-            @Override
-            public void onError(FacebookException error) {
-                error("facebook:onError", error);
-            }
-        });
     }
 
     @Override

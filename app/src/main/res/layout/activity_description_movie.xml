@@ -8,6 +8,10 @@
     android:background="@drawable/background2"
     tools:context="io.newnc.discovermovie.view.MovieDescription">
 
+    <include layout="@layout/navigation_action"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" />
+
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -104,22 +108,6 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
                     android:layout_marginBottom="25dp">
-
-                    <com.facebook.share.widget.SendButton
-                        android:id="@+id/send_movie_button"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:background="@color/com_facebook_messenger_blue"/>
-
-                    <android.support.v4.widget.Space
-                        android:layout_width="10dp"
-                        android:layout_height="match_parent" />
-
-                    <com.facebook.share.widget.ShareButton
-                        android:id="@+id/share_movie_button"
-                        android:layout_height="wrap_content"
-                        android:layout_width="wrap_content"
-                        android:background="@color/com_facebook_blue"/>
                 </LinearLayout>
 
             </RelativeLayout>

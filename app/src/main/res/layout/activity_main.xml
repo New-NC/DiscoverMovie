@@ -18,17 +18,6 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent" />
 
-        <com.facebook.login.widget.LoginButton
-            android:id="@+id/button_facebookLogin"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginRight="100dp"
-            android:layout_marginLeft="100dp"
-            android:layout_marginBottom="30dp" />
-
         <Button
             android:id="@+id/button_startQuestionnaire"
             android:layout_width="match_parent"
@@ -45,9 +34,8 @@
             android:layout_marginBottom="24dp"
             android:layout_marginRight="50dp"
             android:layout_marginLeft="50dp"
-            android:layout_above="@+id/button_facebookLogin"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true" />
 
         <TextView
             android:layout_width="match_parent"
