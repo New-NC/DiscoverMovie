@@ -29,6 +29,7 @@ import com.facebook.share.model.ShareHashtag;
 import com.facebook.share.model.ShareLinkContent;
 import com.facebook.share.model.SharePhoto;
 import com.facebook.share.model.SharePhotoContent;
+import com.facebook.share.widget.MessageDialog;
 import com.facebook.share.widget.SendButton;
 import com.facebook.share.widget.ShareButton;
 import com.facebook.share.widget.ShareDialog;
@@ -88,17 +89,10 @@ public class MovieDescription extends AppCompatActivity implements View.OnClickL
 
         shareActionProvider = (ShareActionProvider) MenuItemCompat.getActionProvider(item);
 
-        shareActionProvider.setOnShareTargetSelectedListener(new ShareActionProvider.OnShareTargetSelectedListener() {
-            @Override
-            public boolean onShareTargetSelected(ShareActionProvider source, Intent intent) {
-                return false;
-            }
-        });
-
         return true;
     }
 
-    private void setShareIntent() {
+    public void setShareIntent(Bitmap image) {
         Intent sharingIntent = new Intent(Intent.ACTION_SEND);
         sharingIntent.setType("image/*");
         String shareBodyText = "Hey, I'm watching " + titleText.getText() + "!";
@@ -110,17 +104,26 @@ public class MovieDescription extends AppCompatActivity implements View.OnClickL
         if (shareActionProvider != null)
             shareActionProvider.setShareIntent(sharingIntent);
 
-        ShareDialog shareDialog;
+        final ShareDialog shareDialog;
         FacebookSdk.sdkInitialize(getApplicationContext());
         shareDialog = new ShareDialog(this);
 
-        ShareLinkContent shareLinkContent = new ShareLinkContent.Builder()
-                .setContentTitle("title")
-                .setContentDescription(shareBodyText)
-                .setContentUrl(Uri.parse(coverPath))
+        SharePhoto photo = new SharePhoto.Builder()
+                .setBitmap(image)
+                .build();
+        final SharePhotoContent content = new SharePhotoContent.Builder()
+                .addPhoto(photo)
                 .build();
 
-        shareDialog.show(shareLinkContent);
+        shareActionProvider.setOnShareTargetSelectedListener(new ShareActionProvider.OnShareTargetSelectedListener() {
+            @Override
+            public boolean onShareTargetSelected(ShareActionProvider source, Intent intent) {
+                if ("com.facebook.katana".equals(intent.getComponent().getPackageName())) {
+                    shareDialog.show(content);
+                }
+                return false;
+            }
+        });
     }
 
     private void setClickListener() {
@@ -141,8 +144,6 @@ public class MovieDescription extends AppCompatActivity implements View.OnClickL
         releaseDateText.setText("Release Date: " + movie.getRelease_date());
         voteAverageText.setText("Vote Average: " + movie.getVote_average());
         overviewText.setText(movie.getOverview());
-
-        setShareIntent();
     }
 
     private static final String CATEG = "MovieDescription";

@@ -4,17 +4,48 @@
     android:background="@color/colorPrimary"
     android:padding="20dp">
 
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:src="@drawable/com_facebook_profile_picture_blank_square"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="38dp"
+        android:id="@+id/circleView"
+        android:layout_alignParentLeft="true"
+        android:visibility="invisible"
+        />
+
     <TextView
-        android:text="Header Navigation"
+        android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginLeft="11dp"
-        android:layout_marginStart="11dp"
-        android:id="@+id/textView3"
-        android:padding="10dp"
         android:textColor="#ffffff"
-        android:textIsSelectable="false" />
+        android:layout_marginLeft="12dp"
+        android:text="new@nc.com"
+        android:textSize="14sp"
+        android:textStyle="normal"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/circleView"
+        android:layout_toEndOf="@id/circleView"
+        android:visibility="invisible" />
+
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="#ffffff"
+        android:text="Filipe Pascale Gois"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:layout_alignTop="@id/circleView"
+        android:layout_alignLeft="@id/email"
+        android:layout_alignStart="@id/email"
+        android:visibility="invisible" />
+
+    <com.facebook.login.widget.LoginButton
+        android:id="@+id/login_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_alignParentBottom="true" />
 </RelativeLayout>

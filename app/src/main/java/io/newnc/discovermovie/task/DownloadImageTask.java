@@ -91,20 +91,12 @@ public class DownloadImageTask extends AsyncTask<String, Void, RequestCreator> {
         progressBar.setVisibility(View.INVISIBLE);
 
         if (context instanceof MovieDescription) {
-            MovieDescription movieDescription = (MovieDescription) context;
+            final MovieDescription movieDescription = (MovieDescription) context;
 
             a.into(new Target() {
                 @Override
                 public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
-                    File file = new File(Environment.getDownloadCacheDirectory().getPath() + "/cover.jpg");
-                    try {
-                        file.createNewFile();
-                        FileOutputStream fos = new FileOutputStream(file);
-                        bitmap.compress(Bitmap.CompressFormat.JPEG, 75, fos);
-                        fos.close();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
+                    movieDescription.setShareIntent(bitmap);
                 }
 
                 @Override
