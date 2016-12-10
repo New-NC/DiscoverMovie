@@ -3,6 +3,7 @@ package io.newnc.discovermovie.view;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.ActionBar;
@@ -12,13 +13,18 @@ import android.util.Log;
 import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.facebook.AccessToken;
+import com.facebook.AccessTokenTracker;
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.FacebookSdk;
+import com.facebook.GraphRequest;
+import com.facebook.GraphResponse;
 import com.facebook.appevents.AppEventsLogger;
 import com.facebook.login.LoginResult;
 import com.facebook.login.widget.LoginButton;
@@ -29,7 +35,14 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FacebookAuthProvider;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.squareup.picasso.Picasso;
+import com.squareup.picasso.RequestCreator;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.w3c.dom.Text;
+
+import de.hdodenhof.circleimageview.CircleImageView;
 import io.newnc.discovermovie.R;
 import io.newnc.discovermovie.task.TaskCallback;
 
@@ -37,6 +50,7 @@ public class MainActivity extends AppCompatActivity implements TaskCallback {
 
     // Facebook
     private CallbackManager callbackManager;
+    private LoginButton loginButton;
 
     // Firebase
     private FirebaseAuth mAuth;
@@ -56,8 +70,6 @@ public class MainActivity extends AppCompatActivity implements TaskCallback {
         super.onCreate(savedInstanceState);
         FacebookSdk.sdkInitialize(getApplicationContext());
         setContentView(R.layout.activity_main);
-
-
 
         AppEventsLogger.activateApp(this);
 
@@ -88,7 +100,72 @@ public class MainActivity extends AppCompatActivity implements TaskCallback {
             }
         };
 
+        NavigationView navigationView = (NavigationView) mDrawerLayout.getChildAt(1);
+        final View headerLayout = navigationView.getHeaderView(0);
+
         callbackManager = CallbackManager.Factory.create();
+        loginButton = (LoginButton) headerLayout.findViewById(R.id.login_button);
+        final TextView nameText = (TextView) headerLayout.findViewById(R.id.name);
+        final TextView emailText = (TextView) headerLayout.findViewById(R.id.email);
+        final CircleImageView circleView = (CircleImageView) headerLayout.findViewById(R.id.circleView);
+
+        loginButton.setReadPermissions("email");
+        loginButton.registerCallback(callbackManager, new FacebookCallback<LoginResult>() {
+            @Override
+            public void onSuccess(LoginResult loginResult) {
+                AccessToken token = loginResult.getAccessToken();
+                log("Loged with success to facebook!");
+                log("Token: " + token.getToken());
+                log("UserId: " + token.getUserId());
+
+                RequestCreator rc = Picasso.with(getApplicationContext()).load("https://graph.facebook.com/" + token.getUserId() + "/picture");
+                rc.into(circleView);
+
+                GraphRequest request = GraphRequest.newMeRequest(token, new GraphRequest.GraphJSONObjectCallback() {
+                    @Override
+                    public void onCompleted(JSONObject object, GraphResponse response) {
+                        try {
+                            nameText.setText(object.getString("name"));
+                            emailText.setText(object.getString("email"));
+                        } catch (JSONException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                });
+
+                Bundle parameters = new Bundle();
+                parameters.putString("fields", "id,name,link,email");
+                request.setParameters(parameters);
+                request.executeAsync();
+
+                AccessTokenTracker tracker = new AccessTokenTracker() {
+                    @Override
+                    protected void onCurrentAccessTokenChanged(AccessToken oldAccessToken, AccessToken currentAccessToken) {
+                        if (currentAccessToken == null) {
+                            circleView.setImageResource(R.drawable.com_facebook_profile_picture_blank_square);
+                            nameText.setText("");
+                            emailText.setText("");
+                        }
+                    }
+                };
+            }
+
+            @Override
+            public void onCancel() {
+                log("cancel");
+            }
+
+            @Override
+            public void onError(FacebookException error) {
+                log(error.getMessage());
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        callbackManager.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override
