@@ -19,6 +19,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import android.widget.TextView;
 import android.widget.Toast;
+import android.text.method.ScrollingMovementMethod;
 
 import com.facebook.CallbackManager;
 import com.facebook.FacebookCallback;
@@ -73,6 +74,9 @@ public class MovieDescription extends AppCompatActivity implements View.OnClickL
         releaseDateText = (TextView) findViewById(R.id.movie_release_date);
         voteAverageText = (TextView) findViewById(R.id.movie_vote_avg);
         overviewText = (TextView) findViewById(R.id.overview);
+
+        titleText.setMovementMethod(new ScrollingMovementMethod());
+        overviewText.setMovementMethod(new ScrollingMovementMethod());
 
         backButton = (Button) findViewById(R.id.returnResults);
 
